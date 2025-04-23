@@ -1,0 +1,14 @@
+# LangChain core + integrations
+langchain
+langchain-community
+langchain-core
+
+# OpenAI client (compatible with langchain)
+openai==0.28.1
+
+# FastAPI and ASGI server
+fastapi
+uvicorn
+
+# Env variable loading
+python-dotenv

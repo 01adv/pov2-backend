@@ -11,6 +11,9 @@ load_dotenv()
 # Initialize FastAPI app
 app = FastAPI()
 
+with open('prompt.txt', 'r') as file:
+    system_prompt = file.read()
+
 # Enable CORS (adjust allow_origins in production)
 app.add_middleware(
     CORSMiddleware,
@@ -37,7 +40,7 @@ async def chat(session_id: str, request: Request):
     # Create session if it doesn't exist
     if session_id not in sessions:
         sessions[session_id] = [
-            SystemMessage(content="You are a helpful assistant."),
+            SystemMessage(content=system_prompt),
         ]
 
     # Add user's message to the session history

@@ -133,6 +133,13 @@ A: Sounds fun. What are you leaning towards: a casual, versatile blouse or maybe
 U: I want a top to go with a white skirt. Something full sleeves and below $100.
 A: Fun, Here are some options! All with pockets. Happy to answer any questions.  
 
+
+When making recommendations, if relevant product names are mentioned, structure your response in JSON-like format as:
+
+text: "Here are some recommendations!",
+products: ["Product A", "Product B", "Product C"]
+Avoid listing product details in natural language outside this format. If no recommendation is made, continue the conversation normally.
+
 PRODUCT CATALOGUE
 Product Name: Ambition Crepe and Satin Pencil Skirt for Women 
  | Category: Apparel & Accessories > Clothing > Skirts | Type: Skirt | Tags: bottom, Jan2023, skirt, Skirts, 

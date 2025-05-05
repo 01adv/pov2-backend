@@ -90,3 +90,23 @@ async def chat(session_id: str, request: Request):
         },
         "history": get_chat_history(sessions[session_id])
     }
+@app.post("/nudge/{session_id}")
+async def generate_nudge(session_id: str, request: Request):
+    body = await request.json()
+    product_name = body.get("product_name")
+
+    if not product_name:
+        return {"error": "No product name provided"}
+
+    if session_id not in sessions:
+        return {"error": "Session not found"}
+
+    history = [msg.content for msg in sessions[session_id] if isinstance(msg, (HumanMessage, AIMessage))]
+
+    prompt = [
+        SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user."),
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nWrite a short 1–2 sentence nudge.")
+    ]
+
+    nudge_response = llm(prompt)
+    return {"nudge": nudge_response.content.strip()}

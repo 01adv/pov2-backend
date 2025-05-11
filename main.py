@@ -68,9 +68,8 @@ async def get_recommendation(session_id: str):
     chat_context = " ".join([message.content for message in session_history])
 
     # Generate the one-liner message based on the context
-    one_liner_prompt = f"Given the following chat context, generate a one-liner recommendation for skincare products:\n{chat_context}\nThe response should be something like: 'We've picked these with your skin goals in mind — no clutter, just clean essentials that work.'"
-    
-    # Send the prompt to the LLM
+    one_liner_prompt = f"Given the following chat context, generate a one-liner skincare product recommendation that reflects the user's request and the product(s) discussed:\n{chat_context}\n The output must be under 10 words, directly tying user needs to the product. Example: 'Perfect for dry skin — lightweight, deeply hydrating serum."
+        
     one_liner_response = llm([SystemMessage(content=system_prompt), HumanMessage(content=one_liner_prompt)])
     
     return {

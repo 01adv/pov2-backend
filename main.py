@@ -1,9 +1,8 @@
-import os
-from dotenv import load_dotenv
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
 from langchain.chat_models import ChatOpenAI
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain.schema import HumanMessage, SystemMessage, AIMessage
+from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 # Load environment variables (for OpenAI API key, etc.)
 load_dotenv()
@@ -11,20 +10,21 @@ load_dotenv()
 # Initialize FastAPI app
 app = FastAPI()
 
-with open('prompt.txt', 'r') as file:
-    system_prompt = file.read()
-
-# Enable CORS (adjust allow_origins in production)
+# Define CORS middleware (adjust for production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development; use ["http://localhost:3000"] or your frontend URL in production
+    allow_origins=["*"],  # For development; use ["http://localhost:3000"] in production
     allow_credentials=True,
-    allow_methods=["*"],  # Or ["POST"] for more restrictive settings
-    allow_headers=["*"],  # Or ["Content-Type"] etc.
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Initialize GPT model (GPT-4o via LangChain)
+# Initialize GPT model (using GPT-4o via LangChain)
 llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
+
+# Load system prompt for context (adjust as needed)
+with open('prompt.txt', 'r') as file:
+    system_prompt = file.read()
 
 # In-memory session store (resets on server restart)
 sessions = {}
@@ -55,4 +55,24 @@ async def chat(session_id: str, request: Request):
     return {
         "response": response.content,
         "history": [message.content for message in sessions[session_id]]
+    }
+
+@app.get("/recommendation/{session_id}")
+async def get_recommendation(session_id: str):
+    # Check if the session exists
+    if session_id not in sessions:
+        return {"error": "Session not found"}
+
+    # Extract session history and context
+    session_history = sessions[session_id]
+    chat_context = " ".join([message.content for message in session_history])
+
+    # Generate the one-liner message based on the context
+    one_liner_prompt = f"Given the following chat context, generate a one-liner recommendation for skincare products:\n{chat_context}\nThe response should be something like: 'We've picked these with your skin goals in mind — no clutter, just clean essentials that work.'"
+    
+    # Send the prompt to the LLM
+    one_liner_response = llm([SystemMessage(content=system_prompt), HumanMessage(content=one_liner_prompt)])
+    
+    return {
+        "one_liner": one_liner_response.content
     }

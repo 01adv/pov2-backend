@@ -104,9 +104,10 @@ async def generate_nudge(session_id: str, request: Request):
     history = [msg.content for msg in sessions[session_id] if isinstance(msg, (HumanMessage, AIMessage))]
 
     prompt = [
-        SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user."),
-        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nWrite a short 1–2 sentence nudge.")
+        SystemMessage(content="You are a persuasive, xfriendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 3 fun styling tips (with emojis) and 2 benefits in a friendly tone. Make it sound like the user has picked a great, fashionable item! Ensure each styling tip and benefit has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as Tip 1, Tip 2, Tip 3, Benefit 1, Benefit 2. Send it as  a structure")
     ]
 
     nudge_response = llm(prompt)
     return {"nudge": nudge_response.content.strip()}
+

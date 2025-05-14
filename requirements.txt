@@ -12,3 +12,4 @@ uvicorn
 
 # Env variable loading
 python-dotenv
+rapidfuzz==2.9.0

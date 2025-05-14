@@ -1,10 +1,12 @@
 import os
 import re
+import ast
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from rapidfuzz import fuzz, process
 
 load_dotenv()
 
@@ -30,17 +32,24 @@ app.add_middleware(
 llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 sessions = {}
 
-def extract_products(text: str, product_list):
-    found = []
-    for product in product_list:
-        if re.search(rf'\b{re.escape(product)}\b', text, re.IGNORECASE):
-            found.append(product)
+# --- Utility Functions ---
+
+def extract_products(text: str, product_list, threshold: int = 80):
+    matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
+    found = [match for match, score, _ in matches if score >= threshold]
     return found
 
+def extract_products_from_ai_response(ai_content: str) -> list:
+    match = re.search(r'products:\s*(\[[^\]]*\])', ai_content, re.IGNORECASE)
+    if match:
+        try:
+            return ast.literal_eval(match.group(1))
+        except Exception:
+            return []
+    return []
+
 def clean_ai_text(ai_content: str) -> str:
-    # Remove 'text: "..."' and 'products: [...]'
-    cleaned = re.sub(r'text:\s*"[^"]*"', '', ai_content, flags=re.IGNORECASE)
-    cleaned = re.sub(r'products:\s*\[.*?\]', '', cleaned, flags=re.IGNORECASE | re.DOTALL)
+    cleaned = re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL)
     return cleaned.strip()
 
 def get_chat_history(session_messages):
@@ -53,6 +62,8 @@ def generate_title_with_llm(user_input: str, matched_products: list) -> str:
     ]
     title_response = llm(title_prompt)
     return title_response.content.strip().strip('"')
+
+# --- Routes ---
 
 @app.post("/chat/{session_id}")
 async def chat(session_id: str, request: Request):
@@ -68,7 +79,13 @@ async def chat(session_id: str, request: Request):
     sessions[session_id].append(HumanMessage(content=user_input))
     response = llm(sessions[session_id])
     ai_content = response.content
-    matched_products = extract_products(ai_content, product_list)
+
+    # Try to extract products from AI response list
+    matched_products = extract_products_from_ai_response(ai_content)
+
+    # Fallback to fuzzy match if needed
+    if not matched_products:
+        matched_products = extract_products(ai_content, product_list)
 
     cleaned_text = clean_ai_text(ai_content)
     sessions[session_id].append(AIMessage(content=ai_content))
@@ -90,6 +107,7 @@ async def chat(session_id: str, request: Request):
         },
         "history": get_chat_history(sessions[session_id])
     }
+
 @app.post("/nudge/{session_id}")
 async def generate_nudge(session_id: str, request: Request):
     body = await request.json()
@@ -104,10 +122,15 @@ async def generate_nudge(session_id: str, request: Request):
     history = [msg.content for msg in sessions[session_id] if isinstance(msg, (HumanMessage, AIMessage))]
 
     prompt = [
-        SystemMessage(content="You are a persuasive, xfriendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
-        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 3 fun styling tips (with emojis) and 2 benefits in a friendly tone. Make it sound like the user has picked a great, fashionable item! Ensure each styling tip and benefit has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as Tip 1, Tip 2, Tip 3, Benefit 1, Benefit 2. Send it as  a structure")
+        SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 3 fun styling tips (with emojis) and 2 benefits in a friendly tone. Make it sound like the user has picked a great, fashionable item! Ensure each styling tip and benefit has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as Tip 1, Tip 2, Tip 3, Benefit 1, Benefit 2. Send it as a structure.")
     ]
 
     nudge_response = llm(prompt)
-    return {"nudge": nudge_response.content.strip()}
+    nudge_text = nudge_response.content.strip()
+
+    # Add nudge as AI message to the session context
+    sessions[session_id].append(AIMessage(content=nudge_text))
+
+    return {"nudge": nudge_text}
 

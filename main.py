@@ -116,8 +116,9 @@ async def generate_nudge(session_id: str, request: Request):
     if not product_name:
         return {"error": "No product name provided"}
 
+    # Initialize session if it doesn't exist
     if session_id not in sessions:
-        return {"error": "Session not found"}
+        sessions[session_id] = [SystemMessage(content=system_prompt)]
 
     history = [msg.content for msg in sessions[session_id] if isinstance(msg, (HumanMessage, AIMessage))]
 
@@ -133,4 +134,5 @@ async def generate_nudge(session_id: str, request: Request):
     sessions[session_id].append(AIMessage(content=nudge_text))
 
     return {"nudge": nudge_text}
+
 

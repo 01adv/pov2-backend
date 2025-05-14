@@ -32,7 +32,6 @@ app.add_middleware(
 llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 sessions = {}
 
-# --- Utility Functions ---
 
 def extract_products(text: str, product_list, threshold: int = 80):
     matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
@@ -124,8 +123,9 @@ async def generate_nudge(session_id: str, request: Request):
 
     prompt = [
         SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
-        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 3 fun styling tips (with emojis) and 2 benefits in a friendly tone. Make it sound like the user has picked a great, fashionable item! Ensure each styling tip and benefit has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as Tip 1, Tip 2, Tip 3, Benefit 1, Benefit 2. Send it as a structure.")
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Make it sound like the user has picked a great, fashionable item! Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as .")
     ]
+
 
     nudge_response = llm(prompt)
     nudge_text = nudge_response.content.strip()

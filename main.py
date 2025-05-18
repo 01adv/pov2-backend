@@ -123,7 +123,7 @@ async def generate_nudge(session_id: str, request: Request):
 
     prompt = [
         SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
-        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Make it sound like the user has picked a great, fashionable item! Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. Make sure that it is sent as is. And it should be 1 sentence max 2 sentences")
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. Here are some example nudges for different look  Product - Ambition Crepe & Satin Pencil Skirt - Pair with a silk blouse & pointed pumps 👠 [Evening Look], Team with a sequin cami & strappy heels  [Casual Look] , Style under a chunky knit & ankle boots ☕ [Professional Look].")
     ]
 
 

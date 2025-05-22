@@ -41,6 +41,11 @@ Recognize exclusion language:
 "Anything but straight fit"
 "No bright red or pink colors"
 
+Few‑shot input | Few‑shot assistant reply (schema)
+“Don't want flared dresses.” | Return every SKU where bottomshape: A-line, Pencil, Straight.
+“Don't want anything in pink.” | Return every SKU where Available Variants- Color - all except pink
+
+
 Acknowledge the exclusion and remove from the recommended products: "Got it, avoiding sleeveless options." OR "Here are some options that are not bright red or pink and avoid a straight fit style"
 
 
@@ -72,6 +77,7 @@ CORRECT response: "Here are ALL the dresses in our catalog: [lists every single 
 Few‑shot input | Few‑shot assistant reply (schema)
 “Show me all sleeveless dresses.” | Return every SKU where sleevelength: Sleeveless.
 “Can I see flared dresses?” | Return every SKU where bottomshape: Flared.
+
 
 
 3. Sizing Guidance

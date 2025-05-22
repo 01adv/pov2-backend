@@ -59,19 +59,32 @@ async def chat(session_id: str, request: Request):
 
 @app.get("/recommendation/{session_id}")
 async def get_recommendation(session_id: str):
-    # Check if the session exists
+    # Validate session exists
     if session_id not in sessions:
         return {"error": "Session not found"}
 
-    # Extract session history and context
     session_history = sessions[session_id]
-    chat_context = " ".join([message.content for message in session_history])
 
-    # Generate the one-liner message based on the context
-    one_liner_prompt = f"Given the following chat context, generate a one-liner skincare product recommendation that reflects the user's request and the product(s) discussed:\n{chat_context}\n The output must be under 10 words, directly tying user needs to the product. Example: 'Perfect for dry skin — lightweight, deeply hydrating serum."
-        
-    one_liner_response = llm([SystemMessage(content=system_prompt), HumanMessage(content=one_liner_prompt)])
-    
+    # Get the last 6 messages (3 exchanges)
+    last_messages = session_history[-6:] if len(session_history) >= 6 else session_history
+
+    # Turn them into a string context
+    chat_context = "\n".join([f"{msg.role.capitalize()}: {msg.content}" for msg in last_messages])
+
+    # Prompt to generate a one-liner based on this recent conversation
+    one_liner_prompt = (
+        f"Given the recent skincare conversation below between a user and assistant, "
+        f"generate a concise one-liner recommendation (under 10 words) that reflects the assistant's latest product suggestion.\n\n"
+        f"{chat_context}\n\n"
+        f"Example: 'Perfect for dry skin — lightweight, deeply hydrating serum.'"
+    )
+
+    # Call LLM with context
+    one_liner_response = llm([
+        Message(role="system", content=system_prompt),
+        Message(role="user", content=one_liner_prompt)
+    ])
+
     return {
         "one_liner": one_liner_response.content
     }

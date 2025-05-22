@@ -307,21 +307,6 @@ Product Details:
 - size): ['xs; s; m; l; xl'] | - by_line): Witty. Impactful. Eccentric. | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 8 | - waisttype): High Waist | - wearingsize): ['S'] | - custom_product): True | - color-pattern): ['black'] | 
 Related Products: []
 
-Product Name: Edge Tweed Sheath Dress 
- | Category: Apparel & Accessories > Clothing > Dresses | Type: Dress | Tags: dress, dresses, Jan2023, 
-
-Price: 120.0
-
-Product Description:
-The Edge Tweed Sheath dress is power dressing delivered with soft elegance. Crafted from luxurious tweed in an unapologetic shade of pink and tailored with unique asymmetric fold at the waist, a crew neck and dart detailing makes it extra flattering . The sheath silhouette is complete with two hidden but deeply functional pockets, a slit and invisible zipper at the back which makes it is perfect for any special occasion or to assert your style at work.
-
-SEO Title: Edge Tweed Sheath Dress | POV Label
-SEO Description: Shop the Edge Tweed Sheath Dress by POV Label. A chic, tailored design blending timeless tweed with a flattering silhouette for sophisticated, versatile style.
-Available Variants:
-- Color: ['tweed-pink'] | - Size: ['xs', 's', 'm', 'l', 'xl'] | 
-Product Details:
-- size): ['xs; s; m; l; xl'] | - by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small | - modelheight): 5' 7.5 | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): True | - color-pattern): ['tweed-pink'] | 
-Related Products: []
 
 Product Name: Eternal Double Breasted Jacket - Limited Edition 
  | Category: Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Type: Jackets | Tags: Aug2024, Jacket, Jackets, 

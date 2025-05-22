@@ -57,32 +57,46 @@ async def chat(session_id: str, request: Request):
         "history": [message.content for message in sessions[session_id]]
     }
 
+from langchain.schema import HumanMessage, AIMessage, SystemMessage  # or appropriate import based on your framework
+
 @app.get("/recommendation/{session_id}")
 async def get_recommendation(session_id: str):
-    # Validate session exists
+    # Check if the session exists
     if session_id not in sessions:
         return {"error": "Session not found"}
 
+    # Extract session history
     session_history = sessions[session_id]
 
-    # Get the last 6 messages (3 exchanges)
-    last_messages = session_history[-6:] if len(session_history) >= 6 else session_history
+    # Filter only assistant messages (usually AIMessage type)
+    assistant_messages = [msg for msg in session_history if isinstance(msg, AIMessage)]
+    if not assistant_messages:
+        return {"error": "No assistant messages to extract recommendation from."}
 
-    # Turn them into a string context
-    chat_context = "\n".join([f"{msg.role.capitalize()}: {msg.content}" for msg in last_messages])
+    # Get the last assistant message
+    last_recommendation = assistant_messages[-1].content
 
-    # Prompt to generate a one-liner based on this recent conversation
+    # Remove the last assistant message from the session history to use as context
+    trimmed_history = session_history.copy()
+    trimmed_history.remove(assistant_messages[-1])
+
+    # Join the rest as chat context
+    chat_context = " ".join([msg.content for msg in trimmed_history if hasattr(msg, 'content')])
+
+    # Prompt for one-liner recommendation
     one_liner_prompt = (
-        f"Given the recent skincare conversation below between a user and assistant, "
-        f"generate a concise one-liner recommendation (under 10 words) that reflects the assistant's latest product suggestion.\n\n"
-        f"{chat_context}\n\n"
-        f"Example: 'Perfect for dry skin — lightweight, deeply hydrating serum.'"
+        f"Given the following chat context, generate a one-liner skincare product recommendation "
+        f"that reflects the user's request and the assistant's final recommendation:\n"
+        f"Chat context: {chat_context}\n"
+        f"Final assistant recommendation: {last_recommendation}\n"
+        f"The output must be under 10 words, directly tying user needs to the product and add the product name too. "
+        f"Example: 'For your dry, frizzy hair, Nourishing shampoo with Argan oil and Gentle Hair Mark with Shea Butter"
     )
 
-    # Call LLM with context
+    # Query the LLM
     one_liner_response = llm([
-        Message(role="system", content=system_prompt),
-        Message(role="user", content=one_liner_prompt)
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=one_liner_prompt)
     ])
 
     return {

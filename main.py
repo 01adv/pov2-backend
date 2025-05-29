@@ -7,9 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from rapidfuzz import fuzz, process
+from datetime import datetime, timedelta  # ADDED
 
 load_dotenv()
-
 app = FastAPI()
 
 # Load system prompt
@@ -30,13 +30,17 @@ app.add_middleware(
 )
 
 llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
-sessions = {}
 
+SESSION_TIMEOUT = timedelta(minutes=30)  # ADDED
+sessions = {}  # session_id: {"messages": [...], "last_active": datetime}  # MODIFIED
+
+
+def is_session_expired(last_active: datetime) -> bool:  # ADDED
+    return datetime.utcnow() - last_active > SESSION_TIMEOUT
 
 def extract_products(text: str, product_list, threshold: int = 80):
     matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
-    found = [match for match, score, _ in matches if score >= threshold]
-    return found
+    return [match for match, score, _ in matches if score >= threshold]
 
 def extract_products_from_ai_response(ai_content: str) -> list:
     match = re.search(r'products:\s*(\[[^\]]*\])', ai_content, re.IGNORECASE)
@@ -48,8 +52,7 @@ def extract_products_from_ai_response(ai_content: str) -> list:
     return []
 
 def clean_ai_text(ai_content: str) -> str:
-    cleaned = re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL)
-    return cleaned.strip()
+    return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
 
 def get_chat_history(session_messages):
     return [msg.content for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
@@ -68,26 +71,30 @@ def generate_title_with_llm(user_input: str, matched_products: list) -> str:
 async def chat(session_id: str, request: Request):
     body = await request.json()
     user_input = body.get("message")
-
     if not user_input:
         return {"error": "No message provided"}
 
-    if session_id not in sessions:
-        sessions[session_id] = [SystemMessage(content=system_prompt)]
+    now = datetime.utcnow()  # ADDED
 
-    sessions[session_id].append(HumanMessage(content=user_input))
-    response = llm(sessions[session_id])
+    # Create or reset expired session
+    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):  # MODIFIED
+        sessions[session_id] = {
+            "messages": [SystemMessage(content=system_prompt)],
+            "last_active": now
+        }
+    else:
+        sessions[session_id]["last_active"] = now  # ADDED
+
+    sessions[session_id]["messages"].append(HumanMessage(content=user_input))
+    response = llm(sessions[session_id]["messages"])
     ai_content = response.content
 
-    # Try to extract products from AI response list
     matched_products = extract_products_from_ai_response(ai_content)
-
-    # Fallback to fuzzy match if needed
     if not matched_products:
         matched_products = extract_products(ai_content, product_list)
 
     cleaned_text = clean_ai_text(ai_content)
-    sessions[session_id].append(AIMessage(content=ai_content))
+    sessions[session_id]["messages"].append(AIMessage(content=ai_content))
 
     if matched_products:
         title = generate_title_with_llm(user_input, matched_products)
@@ -97,42 +104,50 @@ async def chat(session_id: str, request: Request):
                 "products": matched_products,
                 "title": title
             },
-            "history": get_chat_history(sessions[session_id])
+            "history": get_chat_history(sessions[session_id]["messages"])
         }
 
     return {
         "response": {
             "text": cleaned_text
         },
-        "history": get_chat_history(sessions[session_id])
+        "history": get_chat_history(sessions[session_id]["messages"])
     }
 
 @app.post("/nudge/{session_id}")
 async def generate_nudge(session_id: str, request: Request):
     body = await request.json()
     product_name = body.get("product_name")
-
     if not product_name:
         return {"error": "No product name provided"}
 
-    # Initialize session if it doesn't exist
-    if session_id not in sessions:
-        sessions[session_id] = [SystemMessage(content=system_prompt)]
+    now = datetime.utcnow()  # ADDED
 
-    history = [msg.content for msg in sessions[session_id] if isinstance(msg, (HumanMessage, AIMessage))]
+    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):  # MODIFIED
+        sessions[session_id] = {
+            "messages": [SystemMessage(content=system_prompt)],
+            "last_active": now
+        }
+    else:
+        sessions[session_id]["last_active"] = now  # ADDED
+
+    history = [msg.content for msg in sessions[session_id]["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
 
     prompt = [
         SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
         HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕.")
     ]
 
-
     nudge_response = llm(prompt)
     nudge_text = nudge_response.content.strip()
 
-    # Add nudge as AI message to the session context
-    sessions[session_id].append(AIMessage(content=nudge_text))
+    sessions[session_id]["messages"].append(AIMessage(content=nudge_text))
 
     return {"nudge": nudge_text}
 
-
+@app.delete("/session/{session_id}")  # ADDED
+async def delete_session(session_id: str):
+    if session_id in sessions:
+        del sessions[session_id]
+        return {"message": f"Session {session_id} deleted."}
+    return {"error": "Session not found"}

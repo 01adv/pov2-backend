@@ -180,38 +180,6 @@ A: Let me help you out! What's the vibe in mind: say relaxed work dresses,  a ch
 
 PRODUCT CATALOGUE
 
-Product Name: Ambition Crepe and Satin Pencil Skirt for Women
- | Category: Apparel & Accessories > Clothing > Skirts | Type: Skirt | Tags: bottom, Jan2023, skirt, Skirts,
-
-Price: 90.0
-
-Product Description:
-Edgy. Cerebral. ElevatedSleek pencil shape? Check. Stylish yet functional? Check. This sophisticated dual-tone Ambition pencil skirt for women is crafted from a combination of crepe and satin. The stylish asymmetric panel with a front slit and invisible zipper on the side makes this skirt as comfortable as it is flattering. Machine-washable, crease-resistant and fully lined making this a go-to skirt for a long day at work. Team it with our 'Inspiration' top for a day at work, or layer over the navy "Prodigy" jacket for a power profile.
-
-SEO Title: Sophisticated Pencil Skirt for Women in Crepe and Satin
-SEO Description: Discover our Ambition Pencil Skirt, expertly crafted from luxurious crepe and satin. This chic skirt offers a flattering silhouette, making it perfect for you.
-Available Variants:
-- Color: ['navy-blue'] | - Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): True | - rating_count):  |
-Related Products: []
-
-Product Name: Artistry Lace Jacket for Women - Limited Edition
- | Category: Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Type: Jackets | Tags: Aug2024, Jacket, Jackets,
-
-Price: 198.0
-
-Product Description:
-Experience luxury and sophistication with our Artistry Lace Jacket for women. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind jacket.
-
-SEO Title: Stylish Lace Jacket for Women | POV Label
-SEO Description: Discover our beautiful Lace Jacket, perfect for layering and adding a touch of sophistication to any outfit. Ideal for both casual and formal occasions.
-Available Variants:
-- Color: ['white'] | - Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1 |
-Related Products: []
-
 Product Name: Artistry Lace Power Suit for Women – Jacket and White Dress Pants Set
  | Category: Apparel & Accessories > Clothing > Suits | Type: nan | Tags: bundles,
 
@@ -1026,4 +994,36 @@ Available Variants:
 - Color: ['White and Black', 'Wine'] | - Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
 - by_line): Quirky. Feel good. Versatile. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Boat Neck | - sleevelength): Below Elbow | - wearingsize): ['S'] | - custom_product): True | - rating_count): '4 |
+Related Products: []
+
+Product Name: Ambition Crepe and Satin Pencil Skirt for Women
+ | Category: Apparel & Accessories > Clothing > Skirts | Type: Skirt | Tags: bottom, Jan2023, skirt, Skirts,
+
+Price: 90.0
+
+Product Description:
+Edgy. Cerebral. ElevatedSleek pencil shape? Check. Stylish yet functional? Check. This sophisticated dual-tone Ambition pencil skirt for women is crafted from a combination of crepe and satin. The stylish asymmetric panel with a front slit and invisible zipper on the side makes this skirt as comfortable as it is flattering. Machine-washable, crease-resistant and fully lined making this a go-to skirt for a long day at work. Team it with our 'Inspiration' top for a day at work, or layer over the navy "Prodigy" jacket for a power profile.
+
+SEO Title: Sophisticated Pencil Skirt for Women in Crepe and Satin
+SEO Description: Discover our Ambition Pencil Skirt, expertly crafted from luxurious crepe and satin. This chic skirt offers a flattering silhouette, making it perfect for you.
+Available Variants:
+- Color: ['navy-blue'] | - Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): True | - rating_count):  |
+Related Products: []
+
+Product Name: Artistry Lace Jacket for Women - Limited Edition
+ | Category: Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Type: Jackets | Tags: Aug2024, Jacket, Jackets,
+
+Price: 198.0
+
+Product Description:
+Experience luxury and sophistication with our Artistry Lace Jacket for women. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind jacket.
+
+SEO Title: Stylish Lace Jacket for Women | POV Label
+SEO Description: Discover our beautiful Lace Jacket, perfect for layering and adding a touch of sophistication to any outfit. Ideal for both casual and formal occasions.
+Available Variants:
+- Color: ['white'] | - Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1 |
 Related Products: []

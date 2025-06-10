@@ -1,4 +1,4 @@
-import os
+import json
 import re
 import ast
 from dotenv import load_dotenv
@@ -8,6 +8,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from rapidfuzz import fuzz, process
 from datetime import datetime, timedelta  # ADDED
+from pydantic import BaseModel
+from openai import OpenAI
 
 load_dotenv()
 app = FastAPI()
@@ -32,15 +34,46 @@ app.add_middleware(
 llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 
 SESSION_TIMEOUT = timedelta(minutes=30)  # ADDED
-sessions = {}  # session_id: {"messages": [...], "last_active": datetime}  # MODIFIED
+# session_id: {"messages": [...], "last_active": datetime}  # MODIFIED
+sessions = {}
+
+
+class ResponseFormat(BaseModel):
+    text: str
+    products: list[str] = []
+
+
+def convert_langchain_messages_to_openai(messages):
+    role_map = {
+        "system": "system",
+        "human": "user",
+        "ai": "assistant",
+    }
+    return [{"role": role_map[m.type], "content": m.content} for m in messages]
+
+
+def ask_ai_json(messages):
+    """
+    Sends messages to the OpenAI client and returns the response.
+    """
+    response = OpenAI().beta.chat.completions.parse(
+        model="gpt-4o",
+        messages=convert_langchain_messages_to_openai(messages),
+        temperature=0.7,
+        response_format=ResponseFormat,
+    )
+    content = response.choices[0].message.parsed
+    return content
 
 
 def is_session_expired(last_active: datetime) -> bool:  # ADDED
     return datetime.utcnow() - last_active > SESSION_TIMEOUT
 
+
 def extract_products(text: str, product_list, threshold: int = 80):
     matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
     return [match for match, score, _ in matches if score >= threshold]
+
 
 def extract_products_from_ai_response(ai_content: str) -> list:
     match = re.search(r'products:\s*(\[[^\]]*\])', ai_content, re.IGNORECASE)
@@ -51,21 +84,28 @@ def extract_products_from_ai_response(ai_content: str) -> list:
             return []
     return []
 
+
 def clean_ai_text(ai_content: str) -> str:
-    return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
+    # return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
+    return json.loads(ai_content).get("text")
+
 
 def get_chat_history(session_messages):
     return [msg.content for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
 
+
 def generate_title_with_llm(user_input: str, matched_products: list) -> str:
     title_prompt = [
-        SystemMessage(content="You are a creative assistant. Generate a short and catchy title summarizing the type of fashion items based on user intent and product names."),
-        HumanMessage(content=f"User is shopping for: {user_input}\n\nRecommended products:\n{', '.join(matched_products)}\n\nGive me a short catchy title (under 8 words).")
+        SystemMessage(
+            content="You are a creative assistant. Generate a short and catchy title summarizing the type of fashion items based on user intent and product names."),
+        HumanMessage(
+            content=f"User is shopping for: {user_input}\n\nRecommended products:\n{', '.join(matched_products)}\n\nGive me a short catchy title (under 8 words).")
     ]
     title_response = llm(title_prompt)
     return title_response.content.strip().strip('"')
 
 # --- Routes ---
+
 
 @app.post("/chat/{session_id}")
 async def chat(session_id: str, request: Request):
@@ -77,7 +117,8 @@ async def chat(session_id: str, request: Request):
     now = datetime.utcnow()  # ADDED
 
     # Create or reset expired session
-    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):  # MODIFIED
+    # MODIFIED
+    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
         sessions[session_id] = {
             "messages": [SystemMessage(content=system_prompt)],
             "last_active": now
@@ -86,8 +127,8 @@ async def chat(session_id: str, request: Request):
         sessions[session_id]["last_active"] = now  # ADDED
 
     sessions[session_id]["messages"].append(HumanMessage(content=user_input))
-    response = llm(sessions[session_id]["messages"])
-    ai_content = response.content
+    response = ask_ai_json(sessions[session_id]["messages"])
+    ai_content = response.model_dump_json()
 
     matched_products = extract_products_from_ai_response(ai_content)
     if not matched_products:
@@ -114,6 +155,7 @@ async def chat(session_id: str, request: Request):
         "history": get_chat_history(sessions[session_id]["messages"])
     }
 
+
 @app.post("/nudge/{session_id}")
 async def generate_nudge(session_id: str, request: Request):
     body = await request.json()
@@ -123,7 +165,8 @@ async def generate_nudge(session_id: str, request: Request):
 
     now = datetime.utcnow()  # ADDED
 
-    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):  # MODIFIED
+    # MODIFIED
+    if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
         sessions[session_id] = {
             "messages": [SystemMessage(content=system_prompt)],
             "last_active": now
@@ -131,7 +174,8 @@ async def generate_nudge(session_id: str, request: Request):
     else:
         sessions[session_id]["last_active"] = now  # ADDED
 
-    history = [msg.content for msg in sessions[session_id]["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
+    history = [msg.content for msg in sessions[session_id]
+               ["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
 
     prompt = [
         SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
@@ -144,6 +188,7 @@ async def generate_nudge(session_id: str, request: Request):
     sessions[session_id]["messages"].append(AIMessage(content=nudge_text))
 
     return {"nudge": nudge_text}
+
 
 @app.delete("/session/{session_id}")  # ADDED
 async def delete_session(session_id: str):

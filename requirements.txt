@@ -4,7 +4,7 @@ langchain-community
 langchain-core
 
 # OpenAI client (compatible with langchain)
-openai==0.28.1
+openai==1.79.0
 
 # FastAPI and ASGI server
 fastapi

@@ -280,7 +280,7 @@ SEO Description: Discover our Basic Pants for Women featuring stylish satin pipi
 Available Variants:
 Color: ['electric-blue', 'dusty-yellow', 'red', 'white', 'black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']   '1
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']
 
 
 Product Name: Eternal Tweed Power Suit for Women - Jacket with White Pant Set
@@ -314,7 +314,7 @@ SEO Description: Discover our Fit and Flare Dress with a stylish cross belt. Per
 Available Variants:
 Color: ['misty-blue', 'dark-green'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['M']   '2
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['M']
 
 
 Product Name: Forever Dress Pants for Women with Satin Piping
@@ -331,7 +331,7 @@ SEO Description: Discover our Basic Pants for Women featuring stylish satin pipi
 Available Variants:
 Color: ['electric-blue', 'dusty-yellow', 'red', 'white', 'black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']   '1
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']
 
 
 Product Name: Iconic Asymmetric Colorblock Sheath Dress
@@ -382,7 +382,7 @@ SEO Description: Elevate your wardrobe with our Double Breasted Jacket, designed
 Available Variants:
 Color: ['cacao-brown'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']   '2
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
 
 
 Product Name: Impact Double-Breasted Power Suit for Women - Jacket with Flared Pants Set
@@ -484,7 +484,7 @@ SEO Description: Discover our stylish dress pants for women designed for women, 
 Available Variants:
 Color: ['beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']   '2
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']
 
 
 Product Name: Intention Colorblock Vest for Women
@@ -518,7 +518,7 @@ SEO Description: Explore our stylish Vest for Women,perfect for layering and enh
 Available Variants:
 Color: ['beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']   '1
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Intention Vest and Pant Set
@@ -654,7 +654,7 @@ SEO Description: Discover our Peplum Jacket, designed to enhance your figure wit
 Available Variants:
 Color: ['red', 'black'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   '3
+- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   
 
 
 Product Name: Prestige Peplum Power Suit for Women - Jacket and Dress Pant Set
@@ -756,7 +756,7 @@ SEO Description: nan
 Available Variants:
 Color: ["Iris Black", "Camel Brown"] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']   '1
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Tenacity Essential Cowl Neck Viscose Top
@@ -892,7 +892,7 @@ SEO Description: Discover our beautiful Lace Jacket, perfect for layering and ad
 Available Variants:
 Color: ['white'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   '1
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Artistry Lace Power Suit for Women - Jacket and White Dress Pants Set

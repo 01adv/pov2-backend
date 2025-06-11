@@ -59,8 +59,7 @@ def ask_ai_json(messages):
     response = OpenAI().beta.chat.completions.parse(
         model="gpt-4o",
         messages=convert_langchain_messages_to_openai(messages),
-        temperature=1,
-        top_p=1,
+        temperature=0.7,
         response_format=ResponseFormat,
     )
     content = response.choices[0].message.parsed

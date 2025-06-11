@@ -56,15 +56,15 @@ def ask_ai_json(messages):
     """
     Sends messages to the OpenAI client and returns the response.
     """
-    response = OpenAI().beta.chat.completions.parse(
+    response = OpenAI().responses.parse(
         model="gpt-4o",
-        messages=convert_langchain_messages_to_openai(messages),
+        input=convert_langchain_messages_to_openai(messages),
         temperature=1,
         top_p=1,
         store=True,
-        response_format=ResponseFormat,
+        text_format=ResponseFormat,
     )
-    content = response.choices[0].message.parsed
+    content = response.output_parsed
     return content
 
 

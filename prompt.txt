@@ -7,7 +7,7 @@ CRITICAL: Keep all responses short (15-30 words max).
 Conversational Flow Before Recommendations
 If the customer provides a complete description of their needs in their initial response (e.g., "I'm looking for ABC"), the agent should not ask any further clarifying questions and should proceed directly to providing recommendations.
 
-However, if the initial response is incomplete, the agent should ask 1-2 relevant clarifying questions before making a recommendation. Never ask more than 2 follow ups.  The agent should avoid redundancy and adapt its questioning based on the information already provided. Prefer 1 smart follow up and ask 2nd follow up only if you haven't received any information.
+However, if the initial response is incomplete, the agent should always ask 1-2 relevant clarifying questions before making a recommendation. Avoid redundancy and adapt questioning based on the information already provided.
 A. Occasion / Use:
 Question: Is this for a specific occasion like a work meeting or evening outfit or are you just refreshing your wardrobe?
 Contextual Adjustments:
@@ -56,7 +56,7 @@ Avoid listing product details in natural language outside this format. If no rec
 
 
 2. Recommendations & Engagement
-Default approach: Display 6-7 recommendations that best match criteria
+Default approach: Display 6-8 recommendations that best match criteria
 Use this approach for typical requests
 
 CRITICAL - "Show All" Requests Rule:
@@ -65,7 +65,7 @@ Explicitly asks to see ALL items: "Show me all dresses" OR "Show all pants excep
 
 YOU MUST:
 ✅ Show EVERY SINGLE MATCHING PRODUCT from the catalog
-✅ Do NOT limit to 5-7 recommendations
+✅ Do NOT limit to 6-8 recommendations
 ✅ List ALL products that match their criteria and exclusions
 
 Example Implementation:
@@ -194,41 +194,76 @@ SEO Description: Elevate your wardrobe with our Eternal Double Breasted Jacket. 
 Available Variants:
 Color: ['dusty-yellow', 'fawn'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
-Product Name: Eternal Tweed Power Suit for Women - Jacket with White Pant Set
-Tags: bundles
+Product Name: Matriarch Pleat Jacket for Women
+Category: Jackets / Blazers
 
-Price: 300.0
-
-Product Description:
-Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfectÂ power suit for womenâ€”suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.Weâ€™re styling ours with the Forever white trousers separates for an elegant look.
-
-SEO Title: Chic Power Suit for Women - Eternity Tweed Jacket with White Pant Set
-SEO Description: Our Eternity Tweed Jacket paired with elegant white pants, designed for the modern woman.This stylish power suit seamlessly blends sophistication and comfort
-
-Available Variants:
-Size: ['XS', 'S', 'M', 'L', 'XL'] |
-Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
-
-
-Product Name: Focus Fit and Flare Dress with Cross Belt
-Category: Dress
-
-Price: 125.0
+Price: 218.0
 
 Product Description:
-Effortlessly elegant, the Focus Fit and Flare Dress boasts a flattering silhouette with its fit and flare design. The cross-belt detail is designed to flatter and contour without restricting movement, while the three-fourth sleeves and convenient pockets add functionality. Crafted from premium crepe fabric, this is classic workwear is our take on fusing sensibility and sophistication.
+Elevate your wardrobe with the Matriarch Pleat Jacket for Women. The premium jacket features a strikingly accentuated pleat, adding a touch of sophistication to your look. Crafted from heavy crepe material, this power suit exudes elegance and confidence. The roll up sleeve elastic adds a contemporary twist to this timeless piece. Pair this with our comfortable two pleated Authority Flared Pant for that important board meeting.
 
-SEO Title: Stylish Fit and Flare Dress with Cross Belt
-SEO Description: Discover our Fit and Flare Dress with a stylish cross belt. Perfect for any occasion, this dress offers a flattering silhouette and modern elegance.
+SEO Title: Matriarch Pleat Jacket for Women – Elegant Crepe Power Suit with Roll-Up Sleeves
+SEO Description: Discover the Matriarch Pleat Jacket for Women in sand-brown and lavender-mist. Made from premium heavy crepe with pleat detailing and roll-up sleeves. Perfect for business or chic styling. Sizes S–XL.
 
 Available Variants:
-Color: ['misty-blue', 'dark-green'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Color: ['sand-brown', 'lavender-mist'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count): '2
+- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['M']
+
+
+Product Name: Champion Colorblock double breasted Jacket for Women
+Category: Jackets / Blazers
+
+Price: 225.0
+
+Product Description:
+Introducing our Champion Colorblock double breasted Jacket for Women. Made with beautiful crepe and a striking electrifying look, this jacket will elevate any outfit. Featuring two large pockets and a chic color block design, it is both practical and stylish. Experience luxury and exclusivity with this must-have addition to your wardrobe. Pair this with our Forever Dress pants to complete the full look.
+
+SEO Title: Champion Colorblock Double Breasted Jacket – Stylish Crepe Blazer for Women
+SEO Description: Turn heads with the Champion Colorblock Jacket for Women. A double-breasted crepe blazer featuring bold color blocking, large pockets, and a collar neckline. Available in white and electric blue. Sizes S–XL.
+
+Available Variants:
+Color: ['white', 'electric-blue'] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
+
+
+Product Name: Beacon Asymmetrical Lapel Jacket for Women
+Category: Jackets / Blazers
+
+Price: 210.0
+
+Product Description:
+Indulge in sophistication with our Beacon Asymmetrical Lapel Jacket for Women. Crafted from heavy crepe, this power suit features an asymmetrical lapel and large pockets for a contemporary twist. Elevate your style and make a statement with this funky look. Pair this with our Forever Dress pants for that chic and polished look
+
+SEO Title: Beacon Asymmetrical Lapel Jacket – Modern Crepe Blazer with Statement Design
+SEO Description: Step up your style with the Beacon Asymmetrical Lapel Jacket for Women. Tailored from luxe heavy crepe, with a standout asymmetrical lapel and large pockets. Available in pink jacquard and mint green. Sizes S–XL.
+
+
+Available Variants:
+Color: ["Pink Jacquard", "Mint Green"] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
+
+
+Product Name: Authority Pleated Flared Dress Pant for Women
+Category: pants
+
+Price: 140.0
+
+Product Description:
+The Authority Pleated Flared Pant exudes sophistication and exclusivity. Crafted from luxurious heavy crepe, this two-pleat flared pant offers a tasteful and elegant look. Designed for the discerning individual who appreciates luxury and quality, these pants are a must-have addition to any wardrobe. Pair these with our Matriarch Pleated Jacket for a Power look
+
+SEO Title: Authority Pleated Flared Pants – Elegant Heavy Crepe Trousers for Women
+SEO Description: Elevate your formal wear with Authority Pleated Flared Pants. Crafted from high-quality heavy crepe, these trousers offer two-pleat design and a flattering flare. Match with the Matriarch Jacket for a power ensemble. Sizes S–XL.
+
+Available Variants:
+Color: ["Camel Brown", "Lavender Mist"] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
 
 
 Product Name: Forever Dress Pants for Women with Satin Piping
@@ -245,7 +280,58 @@ SEO Description: Discover our Basic Pants for Women featuring stylish satin pipi
 Available Variants:
 Color: ['electric-blue', 'dusty-yellow', 'red', 'white', 'black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline):  | - sleevelength):  | - wearingsize): ['XS'] | - custom_product): False | - rating_count): '1
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']   '1
+
+
+Product Name: Eternal Tweed Power Suit for Women - Jacket with White Pant Set
+Tags: bundles
+
+Price: 300.0
+
+Product Description:
+Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfectÂ power suit for womenâ€”suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.Weâ€™re styling ours with the Forever white trousers separates for an elegant look.
+
+SEO Title: Chic Power Suit for Women - Eternity Tweed Jacket with White Pant Set
+SEO Description: Our Eternity Tweed Jacket paired with elegant white pants, designed for the modern woman.This stylish power suit seamlessly blends sophistication and comfort
+
+Available Variants:
+Size: ['XS', 'S', 'M', 'L', 'XL'] |
+Product Details:
+- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
+
+
+Product Name: Focus Fit and Flare Dress with Cross Belt
+Category: Dress
+
+Price: 125.0
+
+Product Description:
+Effortlessly elegant, the Focus Fit and Flare Dress boasts a flattering silhouette with its fit and flare design. The cross-belt detail is designed to flatter and contour without restricting movement, while the three-fourth sleeves and convenient pockets add functionality. Crafted from premium crepe fabric, this is classic workwear is our take on fusing sensibility and sophistication.
+
+SEO Title: Stylish Fit and Flare Dress with Cross Belt
+SEO Description: Discover our Fit and Flare Dress with a stylish cross belt. Perfect for any occasion, this dress offers a flattering silhouette and modern elegance.
+
+Available Variants:
+Color: ['misty-blue', 'dark-green'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['M']   '2
+
+
+Product Name: Forever Dress Pants for Women with Satin Piping
+Category: Pant
+
+Price: 140.0
+
+Product Description:
+Made from luxurious crepe, these wrinkle-resistant dress pants for women provide comfort and style for those long 9-9 workdays. The deep pockets and satin lining elevate the look, making these pants a must-have for any wardrobe. Woven for a mechanical stretch, they're ultra-comfortable and stay looking sharp throughout the day. Crisp pressed creases, belt loops and front pockets elevate the classic silhouette, while the waistband has an elasticated back for the perfect, comfortable fit. Wear with our Artistry jacket impactful and statement making work look.Part of our Future Classics Collection: washable, breathable and crease-resistant, these flattering pieces form the foundation of a hard-working capsule loved by our customers season after season.
+
+SEO Title: Classic Dress Pants for Women with Satin Piping
+SEO Description: Discover our Basic Pants for Women featuring stylish satin piping on pockets.Perfect for both work and casual outings, these versatile dress pants offer comfort
+
+Available Variants:
+Color: ['electric-blue', 'dusty-yellow', 'red', 'white', 'black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']   '1
 
 
 Product Name: Iconic Asymmetric Colorblock Sheath Dress
@@ -262,7 +348,7 @@ SEO Description: Step out in our chic Sheath Dress featuring a trendy color bloc
 Available Variants:
 Color: ['olive-green-and-light-grey', 'light-grey-and-black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Boat Neck | - sleevelength): Sleeveless | - wearingsize): ['XS'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Straight | - fittype): True to Size  | - neckline): Boat Neck | - sleevelength): Sleeveless | - wearingsize): ['XS']
 
 
 Product Name: Imagination Jute Linen Jacket
@@ -279,7 +365,7 @@ SEO Description: nan
 Available Variants:
 Color: ['black'] | Size: ['s', 'm', 'l'] |
 Product Details:
-- by_line): Irreverent. Chic. Unpredictable. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '2
+- by_line): Irreverent. Chic. Unpredictable. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Impact Double Breasted Jacket
@@ -296,11 +382,11 @@ SEO Description: Elevate your wardrobe with our Double Breasted Jacket, designed
 Available Variants:
 Color: ['cacao-brown'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5'9" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count): '2
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']   '2
 
 
 Product Name: Impact Double-Breasted Power Suit for Women - Jacket with Flared Pants Set
-Tags: bundles
+Category: Jackets / Blazers | Tags: bundles
 
 Price: 150.0
 
@@ -313,7 +399,7 @@ SEO Description: Make a bold statement with our Impact Double Breasted Jacket an
 Available Variants:
 Size: ['S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype):  | - bottomlength):  | - bottomshape):  | - fittype):  | - modelheight):  | - neckline):  | - sleevelength):  | - wearingsize): [] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype):  | - bottomlength):  | - bottomshape):  | - fittype):   | - neckline):  | - sleevelength):  | - wearingsize): []
 
 
 Product Name: Infinity Colorblock Pencil Dress
@@ -330,7 +416,7 @@ SEO Description: Elevate your style with our Pencil Dress featuring a wrap-aroun
 Available Variants:
 Color: ['plum-and-pink', 'dark-green'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['XS'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['XS']
 
 
 Product Name: Innovation Zipper Slit Crepe Sheath Dress
@@ -347,7 +433,7 @@ SEO Description: Elevate your style with our Sheath Dress featuring a trendy zip
 Available Variants:
 Color: ['black', 'red'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Impactful. Stylish. Nuanced. | - bodytype): Petite Friendly | - bottomlength): Above the Knee | - bottomshape): Straight | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['XS'] | - custom_product): 1.0 | - rating_count): '6
+- by_line): Impactful. Stylish. Nuanced. | - bodytype): Petite Friendly | - bottomlength): Above the Knee | - bottomshape): Straight | - fittype): Runs Small.   | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['XS']
 
 
 Product Name: Inspiration Flounce Detail Viscose Top
@@ -364,7 +450,7 @@ SEO Description: nan
 Available Variants:
 Color: ['baby-pink', 'white'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Vibrant. Chic. Evocative. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Vibrant. Chic. Evocative. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Integrity Shoulder Frill detail Jacket
@@ -381,7 +467,7 @@ SEO Description: Our Integrity Houndstooth Jacket featuring shoulder frill detai
 Available Variants:
 Color: ['black', 'sand-brown'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Evocative. Quirky. Adventurous. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '1
+- by_line): Evocative. Quirky. Adventurous. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Intention Colorblock Dress Pants for Women
@@ -398,10 +484,10 @@ SEO Description: Discover our stylish dress pants for women designed for women, 
 Available Variants:
 Color: ['beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5'9" | - neckline):  | - sleevelength):  | - wearingsize): ['M'] | - custom_product): False | - rating_count): '2
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']   '2
 
 
-Product Name: Intention Colorblock Vest (BLACK)
+Product Name: Intention Colorblock Vest for Women
 Category: Jackets / Blazers
 
 Price: 52.5
@@ -415,7 +501,7 @@ SEO Description: nan
 Available Variants:
 Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Intention Colorblock Vest for Women
@@ -432,7 +518,7 @@ SEO Description: Explore our stylish Vest for Women,perfect for layering and enh
 Available Variants:
 Color: ['beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count): '1
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']   '1
 
 
 Product Name: Intention Vest and Pant Set
@@ -449,24 +535,7 @@ SEO Description: Discover our Intention Vest and Pant Set, perfect for any occas
 Available Variants:
 Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Matriarch Pleat Jacket for Women
-Category: Jackets / Blazers
-
-Price: 218.0
-
-Product Description:
-Elevate your wardrobe with the Matriarch Pleat Jacket for Women. The premium jacket features a strikingly accentuated pleat, adding a touch of sophistication to your look. Crafted from heavy crepe material, this power suit exudes elegance and confidence. The roll up sleeve elastic adds a contemporary twist to this timeless piece. Pair this with our comfortable two pleated Authority Flared Pant for that important board meeting.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['sand-brown', 'lavender-mist'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Maverick Bow Detail Jacquard Top
@@ -483,7 +552,7 @@ SEO Description: nan
 Available Variants:
 Color: ['Iris Black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Elevated. Trendy. Stylish. | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Turtleneck | - sleevelength): Sleeveless | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '2
+- by_line): Elevated. Trendy. Stylish. | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Turtleneck | - sleevelength): Sleeveless | - wearingsize): ['S']
 
 
 Product Name: Modern Colorblock Panel Flared Dress
@@ -500,7 +569,7 @@ SEO Description: Embrace elegance with our Flared Dress featuring unique panel d
 Available Variants:
 Color: ['spectra-yellow', 'black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline): Boat Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size  | - neckline): Boat Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Passion Relaxed Shift Dress
@@ -517,7 +586,7 @@ SEO Description: Embrace comfort with our Passion Relaxed Shift Dress. Perfect f
 Available Variants:
 Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Cerebral. Chic. Contemporary. | - bodytype): Petite Friendly | - bottomlength): Above the Knee | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['XS'] | - custom_product): 1.0 | - rating_count): '2
+- by_line): Cerebral. Chic. Contemporary. | - bodytype): Petite Friendly | - bottomlength): Above the Knee | - bottomshape): Straight | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['XS']
 
 
 Product Name: Pinnacle Stand Collar Detail Stretch Dress for Women
@@ -534,7 +603,7 @@ SEO Description: Discover our Pinnacle Dress featuring a chic stand collar. Perf
 Available Variants:
 Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Sophisticated. Contemporary. Chic. | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): A-Line | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Asymmetrical | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '7
+- by_line): Sophisticated. Contemporary. Chic. | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): A-Line | - fittype): True to Size  | - neckline): Asymmetrical | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Pioneer Frill Detail Viscose Top
@@ -551,7 +620,7 @@ SEO Description: nan
 Available Variants:
 Color: ['White'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Feel Good. Unpredictable. Quirky. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Boat Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Feel Good. Unpredictable. Quirky. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Boat Neck | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Point of View Gift Card
@@ -568,7 +637,7 @@ SEO Description: Perfect for: a thoughtful gesture, a heartfelt 'just because,' 
 Available Variants:
 Size: [] |
 Product Details:
-- by_line):  | - bodytype):  | - bottomlength):  | - bottomshape):  | - fittype):  | - modelheight):  | - neckline):  | - sleevelength):  | - wearingsize): [] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype):  | - bottomlength):  | - bottomshape):  | - fittype):   | - neckline):  | - sleevelength):  | - wearingsize): []
 
 
 Product Name: Prestige Peplum Jacket with Satin block
@@ -585,7 +654,7 @@ SEO Description: Discover our Peplum Jacket, designed to enhance your figure wit
 Available Variants:
 Color: ['red', 'black'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '3
+- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   '3
 
 
 Product Name: Prestige Peplum Power Suit for Women - Jacket and Dress Pant Set
@@ -602,7 +671,7 @@ SEO Description: Elevate your professional wardrobe with our Prestige Peplum Jac
 Available Variants:
 Color: ['red', 'black'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Prodigy Neck Frill detail Crepe Jacket for Women
@@ -619,7 +688,7 @@ SEO Description: Our Prodigy Jacket featuring a unique neck frill detail.Perfect
 Available Variants:
 Color: ['navy-blue'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Thought provoking. Stylish. Intriguing | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
+- by_line): Thought provoking. Stylish. Intriguing | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Prodigy Neck Frill Power Suit for Women - Jacket and Pant Set
@@ -636,7 +705,7 @@ SEO Description: Make a bold statement with our Prodigy Neck Frill Jacket and Pa
 Available Variants:
 Size: ['S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Purpose Wide Leg Flared Pants
@@ -653,7 +722,7 @@ SEO Description: Elevate your wardrobe with our Wide leg Flared Pants featuring 
 Available Variants:
 Color: ['cacao-brown', 'beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline):  | - sleevelength):  | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']
 
 
 Product Name: Resilience Sheath Dress
@@ -670,23 +739,24 @@ SEO Description: Step into sophistication with our Sheath Dress. Perfect for any
 Available Variants:
 Color: ['red', 'jute-black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Subtle. Visceral. Chic. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small | - modelheight): 5' 7" | - neckline): Boat Neck | - sleevelength): Elbow length  | - wearingsize): ['XS'] | - custom_product): 1.0 | - rating_count): '3
+- by_line): Subtle. Visceral. Chic. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small  | - neckline): Boat Neck | - sleevelength): Elbow length  | - wearingsize): ['XS']
 
 
-Product Name: Shoulder Frill Jacket - New colors
+Product Name: Integrity Shoulder Frill detail Jacket for Women
+Category: Jacket / Blazers
 
 Price: 210.0
 
 Product Description:
-Shoulder Frill Jacket - New colors
+Elevate your look with our Integrity Shoulder Frill detail, Jacket for Women. Featuring a quirky frill on the shoulder, this jacket adds a touch of character to the classic Single button Blazer. Step out in style and show off your unique sense of fashion with this sophisticated and exclusive piece.
 
 SEO Title: nan
 SEO Description: nan
 
 Available Variants:
-Color: ['sand-brown', 'black'] | Size: ['s', 'm', 'l', 'xl'] |
+Color: ["Iris Black", "Camel Brown"] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype):  | - bottomlength):  | - bottomshape):  | - fittype):  | - modelheight):  | - neckline):  | - sleevelength):  | - wearingsize): [] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']   '1
 
 
 Product Name: Tenacity Essential Cowl Neck Viscose Top
@@ -703,7 +773,7 @@ SEO Description: nan
 Available Variants:
 Color: ['Wine'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Feel Good. Understated. Subtle. | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Cowl Neck | - sleevelength): Sleeveless | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Feel Good. Understated. Subtle. | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Cowl Neck | - sleevelength): Sleeveless | - wearingsize): ['S']
 
 
 Product Name: Timeless Colorblock Sheath Dress
@@ -720,7 +790,7 @@ SEO Description: Discover the perfect Sheath Dress that combines style and comfo
 Available Variants:
 Color: ['barely-pink', 'plum-and-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Trailblazer Adjustable Length Stretch Trousers for Women
@@ -737,7 +807,7 @@ SEO Description: Discover our Trailblazer Stretch Trousers designed for women, f
 Available Variants:
 Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Adventurous. Versatile. Understated. | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '2
+- by_line): Adventurous. Versatile. Understated. | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Pencil | - fittype): Runs Small.   | - neckline):  | - sleevelength):  | - wearingsize): ['S']
 
 
 Product Name: Trendsetter Modal Satin Shirt
@@ -754,7 +824,7 @@ SEO Description: nan
 Available Variants:
 Color: ['Blue and White'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Peculiar. Contemporary. Comfortable. | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Collar | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Peculiar. Contemporary. Comfortable. | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Vision Flare Crepe Midi Dress
@@ -771,7 +841,7 @@ SEO Description: Discover our stunning Midi Dress, perfect for any occasion. Fla
 Available Variants:
 Color: ['Pink', 'Plum'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Sophisticated. Chic. Evocative | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): V-Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '5
+- by_line): Sophisticated. Chic. Evocative | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['S']
 
 
 Product Name: Vogue Low Flare Crepe Shift Dress
@@ -788,7 +858,7 @@ SEO Description: Discover our Vogue Low Flare Shift Dress, perfect for any occas
 Available Variants:
 Color: ['White and Black', 'Wine'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line): Quirky. Feel good. Versatile. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Boat Neck | - sleevelength): Below Elbow | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
+- by_line): Quirky. Feel good. Versatile. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size  | - neckline): Boat Neck | - sleevelength): Below Elbow | - wearingsize): ['S']
 
 
 Product Name: Ambition Crepe and Satin Pencil Skirt for Women
@@ -805,7 +875,7 @@ SEO Description: Discover our Ambition Pencil Skirt, expertly crafted from luxur
 Available Variants:
 Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small.   | - neckline):  | - sleevelength):  | - wearingsize): ['S']
 
 
 Product Name: Artistry Lace Jacket for Women - Limited Edition
@@ -822,7 +892,7 @@ SEO Description: Discover our beautiful Lace Jacket, perfect for layering and ad
 Available Variants:
 Color: ['white'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   '1
 
 
 Product Name: Artistry Lace Power Suit for Women - Jacket and White Dress Pants Set
@@ -839,7 +909,7 @@ SEO Description: Elevate your style with our Artistry Lace Jacket paired with ch
 Available Variants:
 Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Artistry Lace Power Suit for Women - White Jacket and Black Dress Pants Set
@@ -856,7 +926,7 @@ SEO Description: Elevate your style with our Artistry Lace Jacket paired with ch
 Available Variants:
 Size: [] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Aspire Flounce Dress with Piping Detail
@@ -873,10 +943,10 @@ SEO Description: Discover our Flounce Dress with stylish piping. Perfect for any
 Available Variants:
 Color: ['misty-blue', 'dusty-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
-Product Name: Authority Pleated Flared Pant
+Product Name: Authority Pleated Flared Dress Pant for Women
 Category: Pant
 
 Price: 140.0
@@ -890,7 +960,7 @@ SEO Description: nan
 Available Variants:
 Color: ['sand-brown', 'lavender-mist'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']
 
 
 Product Name: Catalyst Pocket Frill Formal Pants for Women
@@ -907,24 +977,7 @@ SEO Description: Discover our Catalyst Formal Pants featuring unique pocket fril
 Available Variants:
 Color: ['navy-blue', 'houndstooth-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Thought-Provoking. Powerful. Feel Good. | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '5
-
-
-Product Name: Champion Colorblock double breasted Jacket for Women
-Category: Jackets / Blazers
-
-Price: 225.0
-
-Product Description:
-Introducing our Champion Colorblock double breasted Jacket for Women. Made with beautiful crepe and a striking electrifying look, this jacket will elevate any outfit. Featuring two large pockets and a chic color block design, it is both practical and stylish. Experience luxury and exclusivity with this must-have addition to your wardrobe. Pair this with our Forever Dress pants to complete the full look.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['white', 'electric-blue'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+- by_line): Thought-Provoking. Powerful. Feel Good. | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): Runs Small.   | - neckline):  | - sleevelength):  | - wearingsize): ['S']
 
 
 Product Name: Charisma Fit and Flare Dress
@@ -941,7 +994,7 @@ SEO Description: Step out in style with our Fit and Flare Dress featuring elegan
 Available Variants:
 Color: ['white', 'powder-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Eccentric. Versatile. Riveting. | - bodytype):  | - bottomlength): Knee Length | - bottomshape): A-Line | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Elbow length  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
+- by_line): Eccentric. Versatile. Riveting. | - bodytype):  | - bottomlength): Knee Length | - bottomshape): A-Line | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Elbow length  | - wearingsize): ['S']
 
 
 Product Name: Disruption Dual Tone Formal Pants for Women
@@ -958,7 +1011,7 @@ SEO Description: Discover our Disruption Dual-Tone Crepe Trousers, designed for 
 Available Variants:
 Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Unapologetic. Genre-defying. Irreverent. | - bodytype):  | - bottomlength):  | - bottomshape): Straight | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '1
+- by_line): Unapologetic. Genre-defying. Irreverent. | - bodytype):  | - bottomlength):  | - bottomshape): Straight | - fittype): Runs Small  | - neckline):  | - sleevelength):  | - wearingsize): ['S']
 
 
 Product Name: Dynamic Double Sided Zipper Pencil Skirt for Women
@@ -975,7 +1028,7 @@ SEO Description: Our Dynamic Pencil Skirt featuring a stylish double-sided zippe
 Available Variants:
 Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Witty. Impactful. Eccentric. | - bodytype):  | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Witty. Impactful. Eccentric. | - bodytype):  | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small.   | - neckline):  | - sleevelength):  | - wearingsize): ['S']
 
 
 Product Name: Edge Tweed Sheath Dress
@@ -992,7 +1045,7 @@ SEO Description: Shop the Edge Tweed Sheath Dress by POV Label. A chic, tailored
 Available Variants:
 Color: ['tweed-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
-- by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+- by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small  | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Eternal Double Breasted Jacket - Limited Edition
@@ -1009,4 +1062,4 @@ SEO Description: Elevate your wardrobe with our Eternal Double Breasted Jacket. 
 Available Variants:
 Color: ['tweed-pink'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']

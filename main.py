@@ -38,9 +38,13 @@ SESSION_TIMEOUT = timedelta(minutes=30)  # ADDED
 sessions = {}
 
 
-class ResponseFormat(BaseModel):
+class ResponseFormatChat(BaseModel):
     text: str
     products: list[str] = []
+
+
+class ResponseFormatNudge(BaseModel):
+    nudge: str
 
 
 def convert_langchain_messages_to_openai(messages):
@@ -52,7 +56,7 @@ def convert_langchain_messages_to_openai(messages):
     return [{"role": role_map[m.type], "content": m.content} for m in messages]
 
 
-def ask_ai_json(messages):
+def ask_ai_json(messages, text_format):
     """
     Sends messages to the OpenAI client and returns the response.
     """
@@ -62,7 +66,7 @@ def ask_ai_json(messages):
         temperature=0.7,
         # top_p=1,
         store=True,
-        text_format=ResponseFormat,
+        text_format=text_format,
     )
     content = response.output_parsed
     return content
@@ -129,7 +133,8 @@ async def chat(session_id: str, request: Request):
         sessions[session_id]["last_active"] = now  # ADDED
 
     sessions[session_id]["messages"].append(HumanMessage(content=user_input))
-    response = ask_ai_json(sessions[session_id]["messages"])
+    response = ask_ai_json(sessions[session_id]
+                           ["messages"], ResponseFormatChat)
     ai_content = response.model_dump_json()
 
     matched_products = extract_products_from_ai_response(ai_content)
@@ -184,10 +189,11 @@ async def generate_nudge(session_id: str, request: Request):
         HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕.")
     ]
 
-    nudge_response = llm(prompt)
-    nudge_text = nudge_response.content.strip()
+    nudge_response = ask_ai_json(prompt, ResponseFormatNudge)
+    nudge_text = nudge_response.nudge
 
-    sessions[session_id]["messages"].append(AIMessage(content=nudge_text))
+    sessions[session_id]["messages"].append(
+        AIMessage(content=nudge_text))
 
     return {"nudge": nudge_text}
 

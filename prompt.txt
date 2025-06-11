@@ -197,268 +197,13 @@ Product Details:
 - by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
 
 
-Product Name: Matriarch Pleat Jacket for Women
-Category: Jackets / Blazers
-
-Price: 218.0
-
-Product Description:
-Elevate your wardrobe with the Matriarch Pleat Jacket for Women. The premium jacket features a strikingly accentuated pleat, adding a touch of sophistication to your look. Crafted from heavy crepe material, this power suit exudes elegance and confidence. The roll up sleeve elastic adds a contemporary twist to this timeless piece. Pair this with our comfortable two pleated Authority Flared Pant for that important board meeting.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['sand-brown', 'lavender-mist'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Champion Colorblock double breasted Jacket for Women
-Category: Jackets / Blazers
-
-Price: 225.0
-
-Product Description:
-Introducing our Champion Colorblock double breasted Jacket for Women. Made with beautiful crepe and a striking electrifying look, this jacket will elevate any outfit. Featuring two large pockets and a chic color block design, it is both practical and stylish. Experience luxury and exclusivity with this must-have addition to your wardrobe. Pair this with our Forever Dress pants to complete the full look.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['white', 'electric-blue'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Ambition Crepe and Satin Pencil Skirt for Women
-Category: Skirt
-
-Price: 90.0
-
-Product Description:
-Edgy. Cerebral. ElevatedSleek pencil shape? Check. Stylish yet functional? Check. This sophisticated dual-tone Ambition pencil skirt for women is crafted from a combination of crepe and satin. The stylish asymmetric panel with a front slit and invisible zipper on the side makes this skirt as comfortable as it is flattering. Machine-washable, crease-resistant and fully lined making this a go-to skirt for a long day at work. Team it with our 'Inspiration' top for a day at work, or layer over the navy "Prodigy" jacket for a power profile.
-
-SEO Title: Sophisticated Pencil Skirt for Women in Crepe and Satin
-SEO Description: Discover our Ambition Pencil Skirt, expertly crafted from luxurious crepe and satin. This chic skirt offers a flattering silhouette, making it perfect for you.
-
-Available Variants:
-Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
-
-
-Product Name: Beacon Asymmetrical Lapel Jacket for Women
-Category: Jackets / Blazers
-
-Price: 210.0
-
-Product Description:
-Indulge in sophistication with our Beacon Asymmetrical Lapel Jacket for Women. Crafted from heavy crepe, this power suit features an asymmetrical lapel and large pockets for a contemporary twist. Elevate your style and make a statement with this funky look. Pair this with our Forever Dress pants for that chic and polished look
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['jacquard-pink', 'mint-green'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Artistry Lace Jacket for Women - Limited Edition
-Category: Jackets / Blazers
-
-Price: 218.0
-
-Product Description:
-Experience luxury and sophistication with our Artistry Lace Jacket for women. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind jacket.
-
-SEO Title: Stylish Lace Jacket for Women | POV Label
-SEO Description: Discover our beautiful Lace Jacket, perfect for layering and adding a touch of sophistication to any outfit. Ideal for both casual and formal occasions.
-
-Available Variants:
-Color: ['white'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1
-
-
-Product Name: Artistry Lace Power Suit for Women - Jacket and White Dress Pants Set
-Tags: bundles
-
-Price: 222.6
-
-Product Description:
-Experience luxury and sophistication with our Artistry Lace Jacket. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind power suit for women jacket.
-
-SEO Title: Power Suit for Women - Artistry Lace Jacket with White Dress Pants Set
-SEO Description: Elevate your style with our Artistry Lace Jacket paired with chic white dress pants. This exquisite power suit combines elegance and sophistication.
-
-Available Variants:
-Size: ['XS', 'S', 'M', 'L', 'XL'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
-
-
-Product Name: Artistry Lace Power Suit for Women - White Jacket and Black Dress Pants Set
-Category: Jackets / Blazers | Tags: bundles
-
-Price: 358.0
-
-Product Description:
-Experience luxury and sophistication with our Artistry Lace Jacket Power Suit. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kindÂ power suit for women.Â This is a two-piece set of our customer favorite Artistry Lace Jacket in White and Forever Dress Pants in BlackÂ Â
-
-SEO Title: Power Suit for Women - Artistry Lace Jacket with Dress Pants Set
-SEO Description: Elevate your style with our Artistry Lace Jacket paired with chic black dress pants. This exquisite power suit combines elegance and sophistication.
-
-Available Variants:
-Size: [] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
-
-
-Product Name: Aspire Flounce Dress with Piping Detail
-Category: Dress
-
-Price: 118.0
-
-Product Description:
-Elevate your style with the Aspire Flounce Dress. Made from luxury crepe and designed with a flattering fit and flare silhouette, this dress exudes a carefree attitude. The piping detail adds a touch of elegance, while the ample pockets provide practicality. Machine washable for convenience without sacrificing quality.
-
-SEO Title: Elegant Flounce Dress with Piping Detail
-SEO Description: Discover our Flounce Dress with stylish piping. Perfect for any occasion, this dress combines elegance and comfort for a standout look.
-
-Available Variants:
-Color: ['misty-blue', 'dusty-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Authority Pleated Flared Pant
-Category: Pant
-
-Price: 140.0
-
-Product Description:
-The Authority Pleated Flared Pant exudes sophistication and exclusivity. Crafted from luxurious heavy crepe, this two-pleat flared pant offers a tasteful and elegant look. Designed for the discerning individual who appreciates luxury and quality, these pants are a must-have addition to any wardrobe. Pair these with our Matriarch Pleated Jacket for a Power look
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['sand-brown', 'lavender-mist'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['M'] | - custom_product): False | - rating_count):
-
-
-Product Name: Catalyst Pocket Frill Formal Pants for Women
-Category: Pant | Tags: Bestseller
-
-Price: 120.0
-
-Product Description:
-Thought-Provoking. Powerful. Feel Good.The Catalyst Pocket Frill formal pants for women are crafted with our signature crepe fabric that has mild mechanical stretch, and is crease-resistant. It features a long leg design for a sharp silhouette and an elegant stretchable waist for post lunch comfort. Finished with pocket frill detail on deep functional pockets the Catalyst trousers is the epitome of fuss-free tailoring - machine washable, sculpting and seriously luxurious. The mid-waisted, slightly flared shape feels contemporary and looks flattering on everyone. Team with our navy Prodigy jacket.
-
-SEO Title: Elegant Formal Pants for Women with Pocket Frill Detail
-SEO Description: Discover our Catalyst Formal Pants featuring unique pocket frill details. Perfect for the office or formal events, these pants combine style and comfort.
-
-Available Variants:
-Color: ['navy-blue', 'houndstooth-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Thought-Provoking. Powerful. Feel Good. | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '5
-
-
-Product Name: Charisma Fit and Flare Dress
-Category: Dress
-
-Price: 118.0
-
-Product Description:
-The Charisma Fit and Flare Dress features a fitted bodice and a flared skirt for an especially hip-friendly silhouette. The asymmetric front drape, high boat neck, invisible back zip and hidden pockets makes this a no-brainer style pick for your nine-to-nine day. The flare skirt allows you to move swiftly with ease. Style with black heels and let the dress speak for itself or go bold with color blocked footwear and add a feel-good charm to your day.
-
-SEO Title: Charming Fit and Flare Dress with Frill Details | POV Label
-SEO Description: Step out in style with our Fit and Flare Dress featuring elegant frill details. Perfect for any occasion, this dress combines charm and comfort effortlessly.
-
-Available Variants:
-Color: ['white', 'powder-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Eccentric. Versatile. Riveting. | - bodytype):  | - bottomlength): Knee Length | - bottomshape): A-Line | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Elbow length  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
-
-
-Product Name: Disruption Dual Tone Formal Pants for Women
-Category: Pant
-
-Price: 98.0
-
-Product Description:
-Unapologetic. Genre-defying. Irreverent.Discover an exclusive look with the Disruption Dual Tone Crepe formal pants for women. Crafted from luxuriously soft crepe and satin these trousers feature a sophisticated dual-tone design. Combining contemporary wide-leg styling with four functional pockets and adjustable waist with hidden elastic, it will take you from laid-back days to dressy nights in effortless style.
-
-SEO Title: Elegant Dual-Tone Crepe Trousers for Women
-SEO Description: Discover our Disruption Dual-Tone Crepe Trousers, designed for the modern woman. These sophisticated formal pants offer a refined silhouette, perfect for you.
-
-Available Variants:
-Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Unapologetic. Genre-defying. Irreverent. | - bodytype):  | - bottomlength):  | - bottomshape): Straight | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '1
-
-
-Product Name: Dynamic Double Sided Zipper Pencil Skirt for Women
-Category: Skirt
-
-Price: 90.0
-
-Product Description:
-Witty. Impactful. Eccentric.The Dynamic Skirt is a modern take on the classic pencil skirt for women with a dual tone look made of jute linen and satin. The perfect blend of form and function, this flattering knee length skirt features functional pockets that offer just the place to stash your phone. The two-way zipper detailing at the back allows for ease of movement by adjusting the length of the slit. Coordinated with the 'Inspiration' pink Flounce top or layered with the 'Imagination' jute linen jacket, it's perfect for making a bold office statement or delivering a keynote speech.
-
-SEO Title: Contemporary Double-Sided Zipper Pencil Skirt for Women
-SEO Description: Our Dynamic Pencil Skirt featuring a stylish double-sided zipper.This modern piece offers a sleek silhouette, perfect for both professional and casual settings.
-
-Available Variants:
-Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Witty. Impactful. Eccentric. | - bodytype):  | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
-
-
-Product Name: Edge Tweed Sheath Dress
-Category: Dress
-
-Price: 120.0
-
-Product Description:
-The Edge Tweed Sheath dress is power dressing delivered with soft elegance.Â Crafted from luxurious tweed in an unapologetic shade of pink and tailored with unique asymmetric fold at the waist, a crew neck and dart detailing makes it extra flattering.Â The sheath silhouette is complete with two hidden but deeply functionalÂ pockets, a slit and invisible zipper at the back which makes it is perfect for anyÂ special occasion or to assert your style at work.Â Â
-
-SEO Title: Edge Tweed Sheath Dress | POV Label
-SEO Description: Shop the Edge Tweed Sheath Dress by POV Label. A chic, tailored design blending timeless tweed with a flattering silhouette for sophisticated, versatile style.
-
-Available Variants:
-Color: ['tweed-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
-
-
-Product Name: Eternal Double Breasted Jacket - Limited Edition
-Category: Jackets / Blazers
-
-Price: 180.0
-
-Product Description:
-Crafted from soft tweed the new Eternal double breasted jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue to ensure it's as suited to the office as it is after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve helps you when you need to roll up your sleeves. We're styling ours with the Forever white trousers separates for an elegant look.
-
-SEO Title: Elegant Double Breasted Jacket - Limited Edition
-SEO Description: Elevate your wardrobe with our Eternal Double Breasted Jacket. This limited edition piece combines sophistication and style, perfect for any occasion.
-
-Available Variants:
-Color: ['tweed-pink'] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1
-
-
 Product Name: Eternal Tweed Power Suit for Women - Jacket with White Pant Set
 Tags: bundles
 
 Price: 300.0
 
 Product Description:
-Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfectÂ power suit for womenâ€”suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.We're styling ours with the Forever white trousers separates for an elegant look.
+Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfectÂ power suit for womenâ€”suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.Weâ€™re styling ours with the Forever white trousers separates for an elegant look.
 
 SEO Title: Chic Power Suit for Women - Eternity Tweed Jacket with White Pant Set
 SEO Description: Our Eternity Tweed Jacket paired with elegant white pants, designed for the modern woman.This stylish power suit seamlessly blends sophistication and comfort
@@ -707,6 +452,22 @@ Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
 
 
+Product Name: Matriarch Pleat Jacket for Women
+Category: Jackets / Blazers
+
+Price: 218.0
+
+Product Description:
+Elevate your wardrobe with the Matriarch Pleat Jacket for Women. The premium jacket features a strikingly accentuated pleat, adding a touch of sophistication to your look. Crafted from heavy crepe material, this power suit exudes elegance and confidence. The roll up sleeve elastic adds a contemporary twist to this timeless piece. Pair this with our comfortable two pleated Authority Flared Pant for that important board meeting.
+
+SEO Title: nan
+SEO Description: nan
+
+Available Variants:
+Color: ['sand-brown', 'lavender-mist'] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): V-Neck | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+
 
 Product Name: Maverick Bow Detail Jacquard Top
 Category: Tops / Blouses
@@ -951,7 +712,7 @@ Category: Dress
 Price: 110.0
 
 Product Description:
-The sheath silhouette you love, now in season's favorite plum and barely pink. Cut from our signature crepe, the TimelessÂ Sheath Dress contours the body without compromising on comfort. Featuring a sleeveless design, a center-back zipper and V-neckline, the slim pencil silhouette is beautifully detailed: note the striking pleated slit detailing that gives the functionality of a slit without the exposure. it's wrinkle resistant and even machine washable, so you can skip the dry cleaners. Slip on with tonal or contrast footwear and you'll be good to go from 9 to 9!
+The sheath silhouette you love, now in season's favorite plum and barely pink. Cut from our signature crepe, the TimelessÂ Sheath Dress contours the body without compromising on comfort. Featuring a sleeveless design, a center-back zipper and V-neckline, the slim pencil silhouette is beautifully detailed: note the striking pleated slit detailing that gives the functionality of a slit without the exposure. it's wrinkle resistant and even machine washable, so you can skip the dry cleaners. Slip on with tonal or contrast footwear and youâ€™ll be good to go from 9 to 9!
 
 SEO Title: Elegant Sheath Dress for Every Occasion
 SEO Description: Discover the perfect Sheath Dress that combines style and comfort.Ideal for any event, this dress will elevate your look effortlessly.Visit our website for more
@@ -985,7 +746,7 @@ Category: Tops / Blouses
 Price: 65.0
 
 Product Description:
-Our TrendsetterÂ Modal Satin shirt is the perfect combination of contemporary styling and modern comfort. The dual tone palette adds a touch of elegance to the sleek satin finish, while the comfort fit provides an effortless look and feel.Â Â it's machine-washable, wrinkle-resistant, and super lightweight. Pro tip: Pair this with our Trailblazer adjustable length pant for an effortless look.
+Our TrendsetterÂ Modal Satin shirt is the perfect combination of contemporary styling and modern comfort. The dual tone palette adds a touch of elegance to the sleek satin finish, while the comfort fit provides an effortless look and feel.Â Â itâ€™s machine-washable, wrinkle-resistant, and super lightweight. Pro tip: Pair this with our Trailblazer adjustable length pant for an effortless look.
 
 SEO Title: nan
 SEO Description: nan
@@ -1019,7 +780,7 @@ Category: Dress
 Price: 118.0
 
 Product Description:
-Who said a work dress can't be fun? This quirky Vogue Low Flare Crepe Shift Dress features a mild stretch allowing for comfort and a flattering silhouette. The low flare adds a hint of sophistication, while the pockets bring convenience and fashion to your ensemble. Luxuriously crafted with the most delicate crepe fabric, it is the perfect addition to any wardrobe.
+Who said a work dress canâ€™t be fun? This quirky Vogue Low Flare Crepe Shift Dress features a mild stretch allowing for comfort and a flattering silhouette. The low flare adds a hint of sophistication, while the pockets bring convenience and fashion to your ensemble. Luxuriously crafted with the most delicate crepe fabric, it is the perfect addition to any wardrobe.
 
 SEO Title: Elegant Shift Dress with Low Flare Design | POV Label
 SEO Description: Discover our Vogue Low Flare Shift Dress, perfect for any occasion. This stylish dress combines comfort and sophistication for a timeless look.
@@ -1028,3 +789,224 @@ Available Variants:
 Color: ['White and Black', 'Wine'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
 - by_line): Quirky. Feel good. Versatile. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Boat Neck | - sleevelength): Below Elbow | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
+
+
+Product Name: Ambition Crepe and Satin Pencil Skirt for Women
+Category: Skirt
+
+Price: 90.0
+
+Product Description:
+Edgy. Cerebral. ElevatedSleek pencil shape? Check. Stylish yet functional? Check. This sophisticated dual-tone Ambition pencil skirt for women is crafted from a combination of crepe and satin. The stylish asymmetric panel with a front slit and invisible zipper on the side makes this skirt as comfortable as it is flattering. Machine-washable, crease-resistant and fully lined making this a go-to skirt for a long day at work. Team it with our 'Inspiration' top for a day at work, or layer over the navy "Prodigy" jacket for a power profile.
+
+SEO Title: Sophisticated Pencil Skirt for Women in Crepe and Satin
+SEO Description: Discover our Ambition Pencil Skirt, expertly crafted from luxurious crepe and satin. This chic skirt offers a flattering silhouette, making it perfect for you.
+
+Available Variants:
+Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Edgy. Cerebral. Elevated | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+
+
+Product Name: Artistry Lace Jacket for Women - Limited Edition
+Category: Jackets / Blazers
+
+Price: 218.0
+
+Product Description:
+Experience luxury and sophistication with our Artistry Lace Jacket for women. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind jacket.
+
+SEO Title: Stylish Lace Jacket for Women | POV Label
+SEO Description: Discover our beautiful Lace Jacket, perfect for layering and adding a touch of sophistication to any outfit. Ideal for both casual and formal occasions.
+
+Available Variants:
+Color: ['white'] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1
+
+
+Product Name: Artistry Lace Power Suit for Women - Jacket and White Dress Pants Set
+Tags: bundles
+
+Price: 222.6
+
+Product Description:
+Experience luxury and sophistication with our Artistry Lace Jacket. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kind power suit for women jacket.
+
+SEO Title: Power Suit for Women - Artistry Lace Jacket with White Dress Pants Set
+SEO Description: Elevate your style with our Artistry Lace Jacket paired with chic white dress pants. This exquisite power suit combines elegance and sophistication.
+
+Available Variants:
+Size: ['XS', 'S', 'M', 'L', 'XL'] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+
+
+Product Name: Artistry Lace Power Suit for Women - White Jacket and Black Dress Pants Set
+Category: Jackets / Blazers | Tags: bundles
+
+Price: 358.0
+
+Product Description:
+Experience luxury and sophistication with our Artistry Lace Jacket Power Suit. This exclusive, limited-edition piece is crafted from pristine crepe, making it a timeless addition to any wardrobe. Elevate your style and make a statement with this one-of-a-kindÂ power suit for women.Â This is a two-piece set of our customer favorite Artistry Lace Jacket in White and Forever Dress Pants in BlackÂ Â
+
+SEO Title: Power Suit for Women - Artistry Lace Jacket with Dress Pants Set
+SEO Description: Elevate your style with our Artistry Lace Jacket paired with chic black dress pants. This exquisite power suit combines elegance and sophistication.
+
+Available Variants:
+Size: [] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count):
+
+
+Product Name: Aspire Flounce Dress with Piping Detail
+Category: Dress
+
+Price: 118.0
+
+Product Description:
+Elevate your style with the Aspire Flounce Dress. Made from luxury crepe and designed with a flattering fit and flare silhouette, this dress exudes a carefree attitude. The piping detail adds a touch of elegance, while the ample pockets provide practicality. Machine washable for convenience without sacrificing quality.
+
+SEO Title: Elegant Flounce Dress with Piping Detail
+SEO Description: Discover our Flounce Dress with stylish piping. Perfect for any occasion, this dress combines elegance and comfort for a standout look.
+
+Available Variants:
+Color: ['misty-blue', 'dusty-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5'9" | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+
+
+Product Name: Authority Pleated Flared Pant
+Category: Pant
+
+Price: 140.0
+
+Product Description:
+The Authority Pleated Flared Pant exudes sophistication and exclusivity. Crafted from luxurious heavy crepe, this two-pleat flared pant offers a tasteful and elegant look. Designed for the discerning individual who appreciates luxury and quality, these pants are a must-have addition to any wardrobe. Pair these with our Matriarch Pleated Jacket for a Power look
+
+SEO Title: nan
+SEO Description: nan
+
+Available Variants:
+Color: ['sand-brown', 'lavender-mist'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+
+
+Product Name: Catalyst Pocket Frill Formal Pants for Women
+Category: Pant | Tags: Bestseller
+
+Price: 120.0
+
+Product Description:
+Thought-Provoking. Powerful. Feel Good.The Catalyst Pocket Frill formal pants for women are crafted with our signature crepe fabric that has mild mechanical stretch, and is crease-resistant. It features a long leg design for a sharp silhouette and an elegant stretchable waist for post lunch comfort. Finished with pocket frill detail on deep functional pockets the Catalyst trousers is the epitome of fuss-free tailoring - machine washable, sculpting and seriously luxurious. The mid-waisted, slightly flared shape feels contemporary and looks flattering on everyone. Team with our navy Prodigy jacket.
+
+SEO Title: Elegant Formal Pants for Women with Pocket Frill Detail
+SEO Description: Discover our Catalyst Formal Pants featuring unique pocket frill details. Perfect for the office or formal events, these pants combine style and comfort.
+
+Available Variants:
+Color: ['navy-blue', 'houndstooth-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Thought-Provoking. Powerful. Feel Good. | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 7" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '5
+
+
+Product Name: Champion Colorblock double breasted Jacket for Women
+Category: Jackets / Blazers
+
+Price: 225.0
+
+Product Description:
+Introducing our Champion Colorblock double breasted Jacket for Women. Made with beautiful crepe and a striking electrifying look, this jacket will elevate any outfit. Featuring two large pockets and a chic color block design, it is both practical and stylish. Experience luxury and exclusivity with this must-have addition to your wardrobe. Pair this with our Forever Dress pants to complete the full look.
+
+SEO Title: nan
+SEO Description: nan
+
+Available Variants:
+Color: ['white', 'electric-blue'] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size | - modelheight): 5' 8" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M'] | - custom_product): False | - rating_count):
+
+
+Product Name: Charisma Fit and Flare Dress
+Category: Dress
+
+Price: 118.0
+
+Product Description:
+The Charisma Fit and Flare Dress features a fitted bodice and a flared skirt for an especially hip-friendly silhouette. The asymmetric front drape, high boat neck, invisible back zip and hidden pockets makes this a no-brainer style pick for your nine-to-nine day. The flare skirt allows you to move swiftly with ease. Style with black heels and let the dress speak for itself or go bold with color blocked footwear and add a feel-good charm to your day.
+
+SEO Title: Charming Fit and Flare Dress with Frill Details | POV Label
+SEO Description: Step out in style with our Fit and Flare Dress featuring elegant frill details. Perfect for any occasion, this dress combines charm and comfort effortlessly.
+
+Available Variants:
+Color: ['white', 'powder-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Eccentric. Versatile. Riveting. | - bodytype):  | - bottomlength): Knee Length | - bottomshape): A-Line | - fittype): True to Size | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Elbow length  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '4
+
+
+Product Name: Disruption Dual Tone Formal Pants for Women
+Category: Pant
+
+Price: 98.0
+
+Product Description:
+Unapologetic. Genre-defying. Irreverent.Discover an exclusive look with the Disruption Dual Tone Crepe formal pants for women. Crafted from luxuriously soft crepe and satin these trousers feature a sophisticated dual-tone design. Combining contemporary wide-leg styling with four functional pockets and adjustable waist with hidden elastic, it will take you from laid-back days to dressy nights in effortless style.
+
+SEO Title: Elegant Dual-Tone Crepe Trousers for Women
+SEO Description: Discover our Disruption Dual-Tone Crepe Trousers, designed for the modern woman. These sophisticated formal pants offer a refined silhouette, perfect for you.
+
+Available Variants:
+Color: ['navy-blue'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Unapologetic. Genre-defying. Irreverent. | - bodytype):  | - bottomlength):  | - bottomshape): Straight | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count): '1
+
+
+Product Name: Dynamic Double Sided Zipper Pencil Skirt for Women
+Category: Skirt
+
+Price: 90.0
+
+Product Description:
+Witty. Impactful. Eccentric.The Dynamic Skirt is a modern take on the classic pencil skirt for women with a dual tone look made of jute linen and satin. The perfect blend of form and function, this flattering knee length skirt features functional pockets that offer just the place to stash your phone. The two-way zipper detailing at the back allows for ease of movement by adjusting the length of the slit. Coordinated with the 'Inspiration' pink Flounce top or layered with the 'Imagination' jute linen jacket, it's perfect for making a bold office statement or delivering a keynote speech.
+
+SEO Title: Contemporary Double-Sided Zipper Pencil Skirt for Women
+SEO Description: Our Dynamic Pencil Skirt featuring a stylish double-sided zipper.This modern piece offers a sleek silhouette, perfect for both professional and casual settings.
+
+Available Variants:
+Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Witty. Impactful. Eccentric. | - bodytype):  | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small. If you're between sizes, we recommend you size up. | - modelheight): 5' 8" | - neckline):  | - sleevelength):  | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+
+
+Product Name: Edge Tweed Sheath Dress
+Category: Dress
+
+Price: 120.0
+
+Product Description:
+The Edge Tweed Sheath dress is power dressing delivered with soft elegance.Â Crafted from luxurious tweed in an unapologetic shade of pink and tailored with unique asymmetric fold at the waist, a crew neck and dart detailing makes it extra flattering.Â The sheath silhouette is complete with two hidden but deeply functionalÂ pockets, a slit and invisible zipper at the back which makes it is perfect for anyÂ special occasion or to assert your style at work.Â Â
+
+SEO Title: Edge Tweed Sheath Dress | POV Label
+SEO Description: Shop the Edge Tweed Sheath Dress by POV Label. A chic, tailored design blending timeless tweed with a flattering silhouette for sophisticated, versatile style.
+
+Available Variants:
+Color: ['tweed-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
+Product Details:
+- by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small | - modelheight): 5' 7.5" | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S'] | - custom_product): 1.0 | - rating_count):
+
+
+Product Name: Eternal Double Breasted Jacket - Limited Edition
+Category: Jackets / Blazers
+
+Price: 180.0
+
+Product Description:
+Crafted from soft tweed the new Eternal double breasted jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue to ensure itâ€™s as suited to the office as it is after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve helps you when you need to roll up your sleeves. Weâ€™re styling ours with the Forever white trousers separates for an elegant look.
+
+SEO Title: Elegant Double Breasted Jacket - Limited Edition
+SEO Description: Elevate your wardrobe with our Eternal Double Breasted Jacket. This limited edition piece combines sophistication and style, perfect for any occasion.
+
+Available Variants:
+Color: ['tweed-pink'] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): Runs Large | - modelheight): 5' 8.5" | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S'] | - custom_product): False | - rating_count): '1

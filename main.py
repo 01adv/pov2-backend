@@ -1,4 +1,3 @@
-import json
 import re
 import ast
 from dotenv import load_dotenv
@@ -8,8 +7,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from rapidfuzz import fuzz, process
 from datetime import datetime, timedelta  # ADDED
-from pydantic import BaseModel
-from openai import OpenAI
 
 load_dotenv()
 app = FastAPI()
@@ -38,38 +35,6 @@ SESSION_TIMEOUT = timedelta(minutes=30)  # ADDED
 sessions = {}
 
 
-class ResponseFormatChat(BaseModel):
-    text: str
-    products: list[str] = []
-
-
-class ResponseFormatNudge(BaseModel):
-    nudge: str
-
-
-def convert_langchain_messages_to_openai(messages):
-    role_map = {
-        "system": "system",
-        "human": "user",
-        "ai": "assistant",
-    }
-    return [{"role": role_map[m.type], "content": m.content} for m in messages]
-
-
-def ask_ai_json(messages, text_format):
-    """
-    Sends messages to the OpenAI client and returns the response.
-    """
-    response = OpenAI().beta.chat.completions.parse(
-        model="gpt-4o",
-        messages=convert_langchain_messages_to_openai(messages),
-        temperature=0.7,
-        response_format=text_format,
-    )
-    content = response.choices[0].message.parsed
-    return content
-
-
 def is_session_expired(last_active: datetime) -> bool:  # ADDED
     return datetime.utcnow() - last_active > SESSION_TIMEOUT
 
@@ -90,8 +55,7 @@ def extract_products_from_ai_response(ai_content: str) -> list:
 
 
 def clean_ai_text(ai_content: str) -> str:
-    # return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
-    return json.loads(ai_content).get("text")
+    return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
 
 
 def get_chat_history(session_messages):
@@ -131,9 +95,8 @@ async def chat(session_id: str, request: Request):
         sessions[session_id]["last_active"] = now  # ADDED
 
     sessions[session_id]["messages"].append(HumanMessage(content=user_input))
-    response = ask_ai_json(sessions[session_id]
-                           ["messages"], ResponseFormatChat)
-    ai_content = response.model_dump_json()
+    response = llm(sessions[session_id]["messages"])
+    ai_content = response.content
 
     matched_products = extract_products_from_ai_response(ai_content)
     if not matched_products:
@@ -187,11 +150,10 @@ async def generate_nudge(session_id: str, request: Request):
         HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕.")
     ]
 
-    nudge_response = ask_ai_json(prompt, ResponseFormatNudge)
-    nudge_text = nudge_response.nudge
+    nudge_response = llm(prompt)
+    nudge_text = nudge_response.content.strip()
 
-    sessions[session_id]["messages"].append(
-        AIMessage(content=nudge_text))
+    sessions[session_id]["messages"].append(AIMessage(content=nudge_text))
 
     return {"nudge": nudge_text}
 

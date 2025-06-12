@@ -9,9 +9,13 @@ from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from rapidfuzz import fuzz, process
 from datetime import datetime, timedelta  # ADDED
 from pydantic import BaseModel
-from openai import OpenAI
+from openai import AsyncOpenAI
+
 
 load_dotenv()
+
+
+openai_client = AsyncOpenAI()
 app = FastAPI()
 
 # Load system prompt
@@ -56,19 +60,34 @@ def convert_langchain_messages_to_openai(messages):
     return [{"role": role_map[m.type], "content": m.content} for m in messages]
 
 
-def ask_ai_json(messages, text_format):
+async def ask_ai_json(messages, text_format):
     """
     Sends messages to the OpenAI client and returns the response.
     """
-    response = OpenAI().responses.parse(
+    response = await openai_client.beta.chat.completions.parse(
         model="gpt-4o",
-        input=convert_langchain_messages_to_openai(messages),
+        messages=convert_langchain_messages_to_openai(messages),
+        temperature=0.7,
+        max_tokens=1000,
+        response_format=text_format,
+        store=True,
+    )
+    return response.choices[0].message.parsed
+
+
+async def ask_ai(messages):
+    """
+    Sends messages to the OpenAI client and returns the response.
+    """
+    response = await openai_client.chat.completions.create(
+        model="gpt-4o",
+        messages=convert_langchain_messages_to_openai(messages),
         temperature=0.7,
         # top_p=1,
         store=True,
-        text_format=text_format,
+        max_tokens=20
     )
-    content = response.output_parsed
+    content = response.choices[0].message.content
     return content
 
 
@@ -100,15 +119,15 @@ def get_chat_history(session_messages):
     return [msg.content for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
 
 
-def generate_title_with_llm(user_input: str, matched_products: list) -> str:
+async def generate_title_with_llm(user_input: str, matched_products: list) -> str:
     title_prompt = [
         SystemMessage(
             content="You are a creative assistant. Generate a short and catchy title summarizing the type of fashion items based on user intent and product names."),
         HumanMessage(
             content=f"User is shopping for: {user_input}\n\nRecommended products:\n{', '.join(matched_products)}\n\nGive me a short catchy title (under 8 words).")
     ]
-    title_response = llm(title_prompt)
-    return title_response.content.strip().strip('"')
+    title_response = await ask_ai(title_prompt)
+    return title_response.strip('"')
 
 # --- Routes ---
 
@@ -133,8 +152,8 @@ async def chat(session_id: str, request: Request):
         sessions[session_id]["last_active"] = now  # ADDED
 
     sessions[session_id]["messages"].append(HumanMessage(content=user_input))
-    response = ask_ai_json(sessions[session_id]
-                           ["messages"], ResponseFormatChat)
+    response = await ask_ai_json(sessions[session_id]
+                                 ["messages"], ResponseFormatChat)
     ai_content = response.model_dump_json()
 
     matched_products = extract_products_from_ai_response(ai_content)
@@ -145,7 +164,7 @@ async def chat(session_id: str, request: Request):
     sessions[session_id]["messages"].append(AIMessage(content=ai_content))
 
     if matched_products:
-        title = generate_title_with_llm(user_input, matched_products)
+        title = await generate_title_with_llm(user_input, matched_products)
         return {
             "response": {
                 "text": cleaned_text,
@@ -189,7 +208,7 @@ async def generate_nudge(session_id: str, request: Request):
         HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕.")
     ]
 
-    nudge_response = ask_ai_json(prompt, ResponseFormatNudge)
+    nudge_response = await ask_ai_json(prompt, ResponseFormatNudge)
     nudge_text = nudge_response.nudge
 
     sessions[session_id]["messages"].append(

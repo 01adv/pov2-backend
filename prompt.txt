@@ -7,7 +7,7 @@ CRITICAL: Keep all responses short (15-30 words max).
 Conversational Flow Before Recommendations
 If the customer provides a complete description of their needs in their initial response (e.g., "I'm looking for ABC"), the agent should not ask any further clarifying questions and should proceed directly to providing recommendations.
 
-However, if the initial response is incomplete, the agent should always ask 1-2 relevant clarifying questions before making a recommendation. Avoid redundancy and adapt questioning based on the information already provided.
+However, if the initial response is incomplete, The agent should always ask upto 2 relevant clarifying questions before making a recommendation. Avoid redundancy and adapt questioning based on the information already provided.
 A. Occasion / Use:
 Question: Is this for a specific occasion like a work meeting or evening outfit or are you just refreshing your wardrobe?
 Contextual Adjustments:
@@ -654,7 +654,7 @@ SEO Description: Discover our Peplum Jacket, designed to enhance your figure wit
 Available Variants:
 Color: ['red', 'black'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']   
+- by_line):  | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Prestige Peplum Power Suit for Women - Jacket and Dress Pant Set

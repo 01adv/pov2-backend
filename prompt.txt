@@ -261,7 +261,7 @@ SEO Title: Authority Pleated Flared Pants – Elegant Heavy Crepe Trousers for W
 SEO Description: Elevate your formal wear with Authority Pleated Flared Pants. Crafted from high-quality heavy crepe, these trousers offer two-pleat design and a flattering flare. Match with the Matriarch Jacket for a power ensemble. Sizes S–XL.
 
 Available Variants:
-Color: ["Camel Brown", "Lavender Mist"] | Size: ['s', 'm', 'l', 'xl'] |
+Color: ["Camel Brown", "Lavender Mist", 'sand-brown'] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
 
@@ -488,23 +488,6 @@ Product Details:
 
 
 Product Name: Intention Colorblock Vest for Women
-Category: Jackets / Blazers
-
-Price: 52.5
-
-Product Description:
-Experience effortless sophistication with our Intention Sleeveless Colorblock Vest. Featuring functional pockets and delicate back frill nuance design, this vest adds a touch of luxury to any outfit. Pair this with matching Intention pants for that chic look.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
-
-
-Product Name: Intention Colorblock Vest for Women
 Category: Jackets / Blazers | Tags: Bestseller
 
 Price: 105.0
@@ -521,19 +504,18 @@ Product Details:
 - by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
-Product Name: Intention Vest and Pant Set
-Category: Jackets / Blazers | Tags: bundles
+Product Name: Intention Colorblock Vest and Dress Pants Set - Beige and Black
+Category: Pant | Tags: bundles
 
-Price: 225.0
+Price: 245.0
 
 Product Description:
-Elevate your style with our Intention Colorblock Vest and Pants set. Featuring deep functional pockets, color block on the side and delicate back frill nuance design, this Vest and Pant set makes it a default choice for a power look.
-
+Experience effortless sophistication with our Intention Sleeveless Colorblock Vest and Pant Set. Featuring functional pockets and delicate back frill nuance design, this vest adds a touch of playfulness to any outfit. Pair this with matching Intention pants for that chic look.
 SEO Title: Stylish Vest and Pant Set for Effortless Chic
 SEO Description: Discover our Intention Vest and Pant Set, perfect for any occasion. This ensemble combines modern elegance with comfort, making it a must-have addition.
 
 Available Variants:
-Size: ['XS', 'S', 'M', 'L', 'XL'] |
+Color: ['beige'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
 Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
@@ -944,23 +926,6 @@ Available Variants:
 Color: ['misty-blue', 'dusty-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Curve Friendly | - bottomlength): Knee Length | - bottomshape): Flared | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
-
-
-Product Name: Authority Pleated Flared Dress Pant for Women
-Category: Pant
-
-Price: 140.0
-
-Product Description:
-The Authority Pleated Flared Pant exudes sophistication and exclusivity. Crafted from luxurious heavy crepe, this two-pleat flared pant offers a tasteful and elegant look. Designed for the discerning individual who appreciates luxury and quality, these pants are a must-have addition to any wardrobe. Pair these with our Matriarch Pleated Jacket for a Power look
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['sand-brown', 'lavender-mist'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength): Ankle length | - bottomshape): Flared | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['M']
 
 
 Product Name: Catalyst Pocket Frill Formal Pants for Women

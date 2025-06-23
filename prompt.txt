@@ -248,6 +248,24 @@ Color: ["Pink Jacquard", "Mint Green"] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
 
+Product Name: Eternal Tweed Power Suit for Women – Jacket with White Pant Set
+Category: Jackets / Blazers
+
+Price: 300.0
+
+Product Description:
+Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfect power suit for women—suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.
+We’re styling ours with the Forever white trousers separates for an elegant look.
+
+SEO Title: Chic Power Suit for Women - Eternity Tweed Jacket with White Pant Set
+SEO Description: Our Eternity Tweed Jacket paired with elegant white pants, designed for the modern woman. This stylish power suit seamlessly blends sophistication and comfort.
+
+Available Variants:
+Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
+
+
 Product Name: Intention Colorblock Vest (BLACK)
 Category: Jackets / Blazers
 

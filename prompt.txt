@@ -248,6 +248,22 @@ Color: ["Pink Jacquard", "Mint Green"] | Size: ['s', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['M']
 
+Product Name: Intention Colorblock Vest (BLACK)
+Category: Jackets / Blazers
+
+Price: 105.0
+
+Product Description:
+Experience effortless sophistication with our Intention Sleeveless Colorblock Vest. Featuring functional pockets and delicate back frill nuance design, this vest adds a touch of luxury to any outfit. Pair this with matching Intention pants for that chic look.
+
+SEO Title: Intention Colorblock Vest (BLACK)
+SEO Description: Experience effortless sophistication with our Intention Sleeveless Colorblock Vest. Featuring functional pockets and delicate back frill nuance design, this vest adds a touch of luxury to any outfit. Pair this with matching Intention pants for that chic look.
+
+Available Variants:
+Color: ["iris black"] | Size: ['s', 'm', 'l', 'xl'] |
+Product Details:
+- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): v-neck | - sleevelength): Sleeveless | - wearingsize): ['M']
+
 
 Product Name: Authority Pleated Flared Dress Pant for Women
 Category: pants
@@ -283,23 +299,6 @@ Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']
 
 
-Product Name: Eternal Tweed Power Suit for Women - Jacket with White Pant Set
-Tags: bundles
-
-Price: 300.0
-
-Product Description:
-Crafted from soft tweed, the new Eternal jacket is here to infuse the everyday with a charming touch. The formal double-breasted design is offset by a playful pink and gold hue, making it the perfectÂ power suit for womenâ€”suited for both the office and after-work events. Sharp tailoring and deep pockets speak to Point of View genesis, while meticulously placed seams create a modern silhouette. The subtle elastic on the sleeve adds practicality for when you need to roll up your sleeves.Weâ€™re styling ours with the Forever white trousers separates for an elegant look.
-
-SEO Title: Chic Power Suit for Women - Eternity Tweed Jacket with White Pant Set
-SEO Description: Our Eternity Tweed Jacket paired with elegant white pants, designed for the modern woman.This stylish power suit seamlessly blends sophistication and comfort
-
-Available Variants:
-Size: ['XS', 'S', 'M', 'L', 'XL'] |
-Product Details:
-- by_line):  | - bodytype): Petite Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
-
-
 Product Name: Focus Fit and Flare Dress with Cross Belt
 Category: Dress
 
@@ -317,23 +316,6 @@ Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Flared | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Three-fourth Sleeves | - wearingsize): ['M']
 
 
-Product Name: Forever Dress Pants for Women with Satin Piping
-Category: Pant
-
-Price: 140.0
-
-Product Description:
-Made from luxurious crepe, these wrinkle-resistant dress pants for women provide comfort and style for those long 9-9 workdays. The deep pockets and satin lining elevate the look, making these pants a must-have for any wardrobe. Woven for a mechanical stretch, they're ultra-comfortable and stay looking sharp throughout the day. Crisp pressed creases, belt loops and front pockets elevate the classic silhouette, while the waistband has an elasticated back for the perfect, comfortable fit. Wear with our Artistry jacket impactful and statement making work look.Part of our Future Classics Collection: washable, breathable and crease-resistant, these flattering pieces form the foundation of a hard-working capsule loved by our customers season after season.
-
-SEO Title: Classic Dress Pants for Women with Satin Piping
-SEO Description: Discover our Basic Pants for Women featuring stylish satin piping on pockets.Perfect for both work and casual outings, these versatile dress pants offer comfort
-
-Available Variants:
-Color: ['electric-blue', 'dusty-yellow', 'red', 'white', 'black'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength):  | - bottomshape): Straight | - fittype): True to Size  | - neckline):  | - sleevelength):  | - wearingsize): ['XS']
-
-
 Product Name: Iconic Asymmetric Colorblock Sheath Dress
 Category: Dress
 
@@ -349,23 +331,6 @@ Available Variants:
 Color: ['olive-green-and-light-grey', 'light-grey-and-black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Tall Friendly | - bottomlength): Below the Knee | - bottomshape): Straight | - fittype): True to Size  | - neckline): Boat Neck | - sleevelength): Sleeveless | - wearingsize): ['XS']
-
-
-Product Name: Imagination Jute Linen Jacket
-Category: Jackets / Blazers
-
-Price: 150.0
-
-Product Description:
-TheÂ Imagination Jute Linen Jacket is the perfect versatile addition to your wardrobe. Dress up for a business eventÂ or just throw it on for a evening with colleagues.Â The couture-style jacket features a combination of jute and satin fabric, tailored for stylish comfort. Crafted to the highest standards, this exudes luxury and elegance.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ['black'] | Size: ['s', 'm', 'l'] |
-Product Details:
-- by_line): Irreverent. Chic. Unpredictable. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Collar | - sleevelength): Full Sleeves | - wearingsize): ['S']
 
 
 Product Name: Impact Double Breasted Jacket
@@ -453,7 +418,7 @@ Product Details:
 - by_line): Vibrant. Chic. Evocative. | - bodytype): Petite Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
-Product Name: Integrity Shoulder Frill detail Jacket
+Product Name: Integrity Shoulder Frill detail Jacket for Women
 Category: Jackets / Blazers
 
 Price: 210.0
@@ -502,22 +467,6 @@ Available Variants:
 Color: ['beige'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
 - by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
-
-
-Product Name: Intention Colorblock Vest and Dress Pants Set - Beige and Black
-Category: Pant | Tags: bundles
-
-Price: 245.0
-
-Product Description:
-Experience effortless sophistication with our Intention Sleeveless Colorblock Vest and Pant Set. Featuring functional pockets and delicate back frill nuance design, this vest adds a touch of playfulness to any outfit. Pair this with matching Intention pants for that chic look.
-SEO Title: Stylish Vest and Pant Set for Effortless Chic
-SEO Description: Discover our Intention Vest and Pant Set, perfect for any occasion. This ensemble combines modern elegance with comfort, making it a must-have addition.
-
-Available Variants:
-Color: ['beige'] | Size: ['XS', 'S', 'M', 'L', 'XL'] |
-Product Details:
-- by_line):  | - bodytype): Tall Friendly | - bottomlength): Ankle length | - bottomshape): Straight | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Maverick Bow Detail Jacquard Top
@@ -722,23 +671,6 @@ Available Variants:
 Color: ['red', 'jute-black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
 - by_line): Subtle. Visceral. Chic. | - bodytype): Tall Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small  | - neckline): Boat Neck | - sleevelength): Elbow length  | - wearingsize): ['XS']
-
-
-Product Name: Integrity Shoulder Frill detail Jacket for Women
-Category: Jacket / Blazers
-
-Price: 210.0
-
-Product Description:
-Elevate your look with our Integrity Shoulder Frill detail, Jacket for Women. Featuring a quirky frill on the shoulder, this jacket adds a touch of character to the classic Single button Blazer. Step out in style and show off your unique sense of fashion with this sophisticated and exclusive piece.
-
-SEO Title: nan
-SEO Description: nan
-
-Available Variants:
-Color: ["Iris Black", "Camel Brown"] | Size: ['s', 'm', 'l', 'xl'] |
-Product Details:
-- by_line):  | - bodytype): Curve Friendly | - bottomlength):  | - bottomshape):  | - fittype): True to Size  | - neckline): V-Neck | - sleevelength): Sleeveless | - wearingsize): ['M']
 
 
 Product Name: Tenacity Essential Cowl Neck Viscose Top
@@ -994,23 +926,6 @@ Available Variants:
 Color: ['black'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
 Product Details:
 - by_line): Witty. Impactful. Eccentric. | - bodytype):  | - bottomlength): Below the Knee | - bottomshape): Pencil | - fittype): Runs Small.   | - neckline):  | - sleevelength):  | - wearingsize): ['S']
-
-
-Product Name: Edge Tweed Sheath Dress
-Category: Dress
-
-Price: 120.0
-
-Product Description:
-The Edge Tweed Sheath dress is power dressing delivered with soft elegance.Â Crafted from luxurious tweed in an unapologetic shade of pink and tailored with unique asymmetric fold at the waist, a crew neck and dart detailing makes it extra flattering.Â The sheath silhouette is complete with two hidden but deeply functionalÂ pockets, a slit and invisible zipper at the back which makes it is perfect for anyÂ special occasion or to assert your style at work.Â Â
-
-SEO Title: Edge Tweed Sheath Dress | POV Label
-SEO Description: Shop the Edge Tweed Sheath Dress by POV Label. A chic, tailored design blending timeless tweed with a flattering silhouette for sophisticated, versatile style.
-
-Available Variants:
-Color: ['tweed-pink'] | Size: ['xs', 's', 'm', 'l', 'xl'] |
-Product Details:
-- by_line): Elevated. Epic. Evocative | - bodytype): Petite Friendly | - bottomlength): Knee Length | - bottomshape): Pencil | - fittype): Runs Small  | - neckline): Round Neck | - sleevelength): Half Sleeves | - wearingsize): ['S']
 
 
 Product Name: Eternal Double Breasted Jacket - Limited Edition

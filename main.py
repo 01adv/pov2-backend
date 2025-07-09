@@ -164,3 +164,9 @@ async def delete_session(session_id: str):
         del sessions[session_id]
         return {"message": f"Session {session_id} deleted."}
     return {"error": "Session not found"}
+
+
+
+@app.get("/healthcheck")
+async def healthcheck():
+    return {"message": "I'm alive!"}

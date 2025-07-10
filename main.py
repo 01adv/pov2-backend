@@ -25,11 +25,11 @@ load_dotenv()
 app = FastAPI()
 
 # Load system prompt
-with open('prompt.txt', 'r', encoding='utf-8') as file:
+with open('prompt.txt', 'r') as file:
     system_prompt_text = file.read()
 
 # Load products (for fallback fuzzy matching)
-with open('products.txt', 'r', encoding='utf-8') as f:
+with open('products.txt', 'r') as f:
     product_list = [line.strip() for line in f.readlines() if line.strip()]
 
 # CORS setup

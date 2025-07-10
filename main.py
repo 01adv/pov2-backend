@@ -12,11 +12,11 @@ load_dotenv()
 app = FastAPI()
 
 # Load system prompt
-with open('prompt.txt', 'r') as file:
+with open('prompt.txt', 'r', encoding='utf-8') as file:
     system_prompt = file.read()
 
 # Load products
-with open('products.txt', 'r') as f:
+with open('products.txt', 'r', encoding='utf-8') as f:
     product_list = [line.strip() for line in f.readlines() if line.strip()]
 
 # CORS setup
@@ -146,8 +146,9 @@ async def generate_nudge(session_id: str, request: Request):
                ["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
 
     prompt = [
-        SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips, benefits, and making the user feel stylish and confident."),
-        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕.")
+        SystemMessage(content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips and making the user feel stylish and confident."),
+        
+        HumanMessage(content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tips (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudges for evening look - Pair with a silk blouse & pointed pumps 👠 , Here is an example nudges for casual look -  Team with a sequin cami & strappy heels, Here is an example nudges for Professional look -  Style under a chunky knit & ankle boots ☕. Format: Do not repeat the product name. Incorrect: Slip into the Infinity Colorblock Pencil Dress and pair with bold red heels and a metallic clutch for a look that's both daring and sophisticated! 💃✨Correct: Slip into this dress and pair with bold red heels and a metallic clutch for a look that's both daring and sophisticated! 💃✨")
     ]
 
     nudge_response = llm(prompt)

@@ -6,14 +6,16 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain.tools import Tool
-from langchain.agents import initialize_agent, AgentType
+from langchain.agents import AgentExecutor, create_react_agent
+from langchain import hub
 from rapidfuzz import fuzz, process
 import chromadb
-from chromadb.utils import embedding_functions
 from embedder import embed_products
+from langchain.prompts import PromptTemplate
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
@@ -24,7 +26,7 @@ app = FastAPI()
 
 # Load system prompt
 with open('prompt.txt', 'r', encoding='utf-8') as file:
-    system_prompt = file.read()
+    system_prompt_text = file.read()
 
 # Load products (for fallback fuzzy matching)
 with open('products.txt', 'r', encoding='utf-8') as f:
@@ -52,23 +54,47 @@ async def startup_event():
     embed_products()
 
 # Vector search function
-def vector_search(query: str, top_k: int = 3, filters: dict = None) -> list:
+# def vector_search(query: str, top_k: int = 5, filters: dict = None) -> list:
+#     logger.info(f"Running vector search for query: '{query}' with filters: {filters}")
+#     client = chromadb.PersistentClient(path="./chroma_db")
+#     collection = client.get_collection(name="products")
+#     embedding_function = OpenAIEmbeddings(
+#         openai_api_key=os.getenv("OPENAI_API_KEY"),
+#         model="text-embedding-3-small"
+#     )
+#     query_embedding = embedding_function.embed_query(query)
+#     results = collection.query(
+#         query_embeddings=[query_embedding],
+#         n_results=top_k,
+#         where=filters,
+#         include=["metadatas"]
+#     )
+#     logger.debug(f"Vector search result: {results}")
+#     return [metadata for metadata in results["metadatas"][0]]
+
+def vector_search(query: str, top_k: int = 7, filters: dict = None) -> list:
     logger.info(f"Running vector search for query: '{query}' with filters: {filters}")
     client = chromadb.PersistentClient(path="./chroma_db")
     collection = client.get_collection(name="products")
-    embedding_function = embedding_functions.OpenAIEmbeddingFunction(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        model_name="text-embedding-3-small"
+    embedding_function = OpenAIEmbeddings(
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        model="text-embedding-3-small"
     )
-    query_embedding = embedding_function([query])[0]
+    query_embedding = embedding_function.embed_query(query)
     results = collection.query(
         query_embeddings=[query_embedding],
         n_results=top_k,
         where=filters,
-        include=["metadatas"]
+        include=["metadatas", "documents"]  # Include documents for context
     )
     logger.debug(f"Vector search result: {results}")
-    return [metadata for metadata in results["metadatas"][0]]
+    return [
+        {
+            "metadata": metadata,
+            "document": document
+        }
+        for metadata, document in zip(results["metadatas"][0], results["documents"][0])
+    ]
 
 # Tool for the agent
 tools = [
@@ -80,11 +106,27 @@ tools = [
 ]
 
 # Initialize the agent
-agent = initialize_agent(
+prompt = hub.pull("hwchase17/react-chat")
+# prompt.messages[0] = SystemMessage(content=system_prompt_text)
+# Create a new PromptTemplate with your system prompt
+system_prompt = PromptTemplate(
+    input_variables=prompt.input_variables,
+    template=system_prompt_text + "\n\n" + prompt.template
+)
+
+agent = create_react_agent(
     tools=tools,
     llm=llm,
-    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
+    prompt=system_prompt
 )
+
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    verbose=True,
+    handle_parsing_errors="Check your output and make sure it conforms to the format instructions."
+)
+
 
 def is_session_expired(last_active: datetime) -> bool:
     return datetime.utcnow() - last_active > SESSION_TIMEOUT
@@ -112,8 +154,11 @@ def extract_products(text: str, product_list, threshold: int = 80):
 def get_chat_history(session_messages):
     return [msg.content for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
 
+def get_agent_chat_history(session_messages):
+    return [msg for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
+
 def generate_title_with_llm(user_input: str, matched_products: list) -> str:
-    prompt = [
+    prompt_messages = [
         SystemMessage(
             content="You are a creative assistant. Generate a short and catchy title summarizing the type of fashion items based on user intent and product names."
         ),
@@ -121,8 +166,8 @@ def generate_title_with_llm(user_input: str, matched_products: list) -> str:
             content=f"User is shopping for: {user_input}\n\nRecommended products:\n{', '.join(matched_products)}\n\nGive me a short catchy title (under 8 words)."
         )
     ]
-    logger.debug(f"Generating title with LLM prompt: {prompt}")
-    response = llm(prompt)
+    logger.debug(f"Generating title with LLM prompt: {prompt_messages}")
+    response = llm.invoke(prompt_messages)
     logger.info(f"Generated title: {response.content.strip()}")
     return response.content.strip().strip('"')
 
@@ -143,17 +188,22 @@ async def chat(session_id: str, request: Request):
         if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
             logger.info(f"Creating new session: {session_id}")
             sessions[session_id] = {
-                "messages": [SystemMessage(content=system_prompt)],
+                "messages": [SystemMessage(content=system_prompt_text)],
                 "last_active": now
             }
         else:
             logger.info(f"Updating session activity: {session_id}")
             sessions[session_id]["last_active"] = now
 
+        chat_history = get_agent_chat_history(sessions[session_id]["messages"])
         sessions[session_id]["messages"].append(HumanMessage(content=user_input))
 
         logger.debug("Calling agent with user input...")
-        response = agent.run(user_input)
+        response_payload = agent_executor.invoke({
+            "input": user_input,
+            "chat_history": chat_history
+        })
+        response = response_payload['output']
         logger.info(f"Agent response: {response}")
 
         matched_products = extract_products_from_ai_response(response)
@@ -199,7 +249,7 @@ async def generate_nudge(session_id: str, request: Request):
         if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
             logger.info(f"Creating new session for nudge: {session_id}")
             sessions[session_id] = {
-                "messages": [SystemMessage(content=system_prompt)],
+                "messages": [SystemMessage(content=system_prompt_text)],
                 "last_active": now
             }
         else:
@@ -208,16 +258,16 @@ async def generate_nudge(session_id: str, request: Request):
 
         history = [msg.content for msg in sessions[session_id]["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
 
-        prompt = [
+        prompt_messages = [
             SystemMessage(
                 content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips and making the user feel stylish and confident."
             ),
             HumanMessage(
-                content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tip (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition Crepe & Satin Pencil Skirt, Here is an example nudge for evening look - Pair with a silk blouse & pointed pumps 👠, Here is an example nudge for casual look - Team with a sequin cami & strappy heels, Here is an example nudge for Professional look - Style under a chunky knit & ankle boots ☕. Format: Do not repeat the product name. Correct: Slip into this dress and pair with bold red heels and a metallic clutch for a look that's both daring and sophisticated! 💃✨"
+                content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tip (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition\u202fCrepe\u202f&\u202fSatin\u202fPencil\u202fSkirt, Here is an example nudge for evening look - Pair with a silk blouse & pointed pumps \ud83d\udc60, Here is an example nudge for casual look - Team with a sequin cami & strappy heels, Here is an example nudge for Professional look - Style under a chunky knit & ankle boots \u2615. Format: Do not repeat the product name. Correct: Slip into this dress and pair with bold red heels and a metallic clutch for a look that's both daring and sophisticated! \ud83d\udc83\u2728"
             )
         ]
-        logger.debug(f"Sending nudge prompt to LLM: {prompt}")
-        nudge_response = llm(prompt)
+        logger.debug(f"Sending nudge prompt to LLM: {prompt_messages}")
+        nudge_response = llm.invoke(prompt_messages)
         logger.info(f"Nudge generated: {nudge_response.content.strip()}")
 
         sessions[session_id]["messages"].append(AIMessage(content=nudge_response.content.strip()))

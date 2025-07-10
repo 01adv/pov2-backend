@@ -1,7 +1,7 @@
 import pandas as pd
-from langchain.embeddings import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 import chromadb
-from chromadb.utils import embedding_functions
 import os
 from dotenv import load_dotenv
 
@@ -13,9 +13,9 @@ def embed_products():
     collection = client.get_or_create_collection(name="products")
 
     # Initialize OpenAI embedding function
-    embedding_function = embedding_functions.OpenAIEmbeddingFunction(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        model_name="text-embedding-3-small"
+    embedding_function = OpenAIEmbeddings(
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        model="text-embedding-3-small"
     )
 
     # Read products from CSV
@@ -28,7 +28,7 @@ def embed_products():
 
     for idx, row in df.iterrows():
         # Combine relevant fields for embedding
-        text = f"{row['Product Name']} {row['Product Description']} {row['Tags']} {row['Vibe']}"
+        text = f"{row['Product Name']} {row["Price"]} {row['Product Description']} {row['Tags']} {row["Price"]} {row['Vibe']} {row['Available Variants']}"
         documents.append(text)
         metadatas.append({
             "product_name": row["Product Name"],
@@ -45,11 +45,12 @@ def embed_products():
         ids.append(str(idx))
 
     # Generate embeddings and store in ChromaDB
+    embeddings = embedding_function.embed_documents(documents)
     collection.upsert(
         documents=documents,
         metadatas=metadatas,
         ids=ids,
-        embeddings=embedding_function(documents)
+        embeddings=embeddings
     )
     print("Product embeddings stored in ChromaDB.")
 

@@ -10,7 +10,7 @@ chroma_client = chromadb.PersistentClient(
 def ingest_data():
     try:
         # Load Excel data from uploaded file path
-        df = pd.read_csv("formatted_products.csv")
+        df = pd.read_csv("cleaned_products.csv")
 
         # Try to get existing ChromaDB collection
         try:
@@ -31,7 +31,8 @@ def ingest_data():
                 "Product Description": row.get("Product Description"),
                 "SEO Title": row.get("SEO Title"),
                 "SEO Description": row.get("SEO Description"),
-                "Available Variants": row.get("Available Variants"),
+                "Color": row.get("Color"),
+                "Size": row.get("Size"),
                 "Product Details": row.get("Product Details"),
                 "Vibe": row.get("Vibe"),
             }
@@ -66,7 +67,7 @@ def ingest_data():
 
                 if key in [
                     "Product Name", "category", "Product Details", "Product Description", "SEO Title",
-                    "SEO Description", "Tags", "Price", "Available Variants", "Vibe"
+                    "SEO Description", "Tags", "Price", "Color", "Size", "Vibe"
                 ]:
                     text_parts.append(
                         f"{key.replace('_', ' ').title()}: {value}")

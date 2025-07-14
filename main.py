@@ -169,7 +169,7 @@ async def chat(session_id: str, request: Request):
         }
     else:
         sessions[session_id]["last_active"] = now  # ADDED
-        sessions[session_id]["products_list"] += format_products(top_metadata)
+        sessions[session_id]["products_list"] = format_products(top_metadata)
 
     sessions[session_id]["messages"].append(SystemMessage(
         content=f"PRODUCT CATALOGUE\n\n{sessions[session_id]['products_list']}"))

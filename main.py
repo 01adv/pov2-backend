@@ -2,6 +2,8 @@ import re
 import ast
 import os
 import logging
+import json
+import pandas as pd
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request, HTTPException
@@ -25,11 +27,11 @@ load_dotenv()
 app = FastAPI()
 
 # Load system prompt
-with open('prompt.txt', 'r') as file:
+with open('prompt.txt', 'r', encoding='utf-8') as file:
     system_prompt_text = file.read()
 
 # Load products (for fallback fuzzy matching)
-with open('products.txt', 'r') as f:
+with open('products.txt', 'r', encoding='utf-8') as f:
     product_list = [line.strip() for line in f.readlines() if line.strip()]
 
 # CORS setup
@@ -53,8 +55,23 @@ async def startup_event():
     logger.info("Server starting... Running embedder to generate product embeddings.")
     embed_products()
 
-# Vector search function
-# def vector_search(query: str, top_k: int = 5, filters: dict = None) -> list:
+
+
+# def vector_search(query: str, top_k: int = 7, filters: dict = None) -> list:
+#     logger.info(f"Raw input query: '{query}', filters: {filters}")
+#     # Handle case where query is a JSON string containing query and filters
+#     try:
+#         if isinstance(query, str) and query.startswith("{"):
+#             input_dict = json.loads(query)
+#             query = input_dict.get("query", query)
+#             filters = input_dict.get("filters", filters)
+#     except json.JSONDecodeError:
+#         logger.warning("Failed to parse query as JSON, using as-is")
+    
+    
+#     if filters and len(filters) > 1 and "$and" not in filters and "$or" not in filters:
+#         filters = {"$and": [{key: value} for key, value in filters.items()]}
+    
 #     logger.info(f"Running vector search for query: '{query}' with filters: {filters}")
 #     client = chromadb.PersistentClient(path="./chroma_db")
 #     collection = client.get_collection(name="products")
@@ -66,13 +83,36 @@ async def startup_event():
 #     results = collection.query(
 #         query_embeddings=[query_embedding],
 #         n_results=top_k,
-#         where=filters,
-#         include=["metadatas"]
+#         where=filters or {},  # Ensure filters are applied
+#         include=["metadatas", "documents"]
 #     )
 #     logger.debug(f"Vector search result: {results}")
-#     return [metadata for metadata in results["metadatas"][0]]
+#     return [
+#         {
+#             "metadata": metadata,
+#             "document": document
+#         }
+#         for metadata, document in zip(results["metadatas"][0], results["documents"][0])
+#     ]
+
+import json
+import logging
 
 def vector_search(query: str, top_k: int = 7, filters: dict = None) -> list:
+    logger.info(f"Raw input query: '{query}', filters: {filters}")
+    # Handle case where query is a JSON string containing query and filters
+    try:
+        if isinstance(query, str) and query.startswith("{"):
+            input_dict = json.loads(query)
+            query = input_dict.get("query", query)
+            filters = input_dict.get("filters", filters)
+    except json.JSONDecodeError:
+        logger.warning("Failed to parse query as JSON, using as-is")
+
+    # Transform filters to use $and if multiple conditions are present
+    if filters and len(filters) > 1 and "$and" not in filters and "$or" not in filters:
+        filters = {"$and": [{key: value} for key, value in filters.items()]}
+
     logger.info(f"Running vector search for query: '{query}' with filters: {filters}")
     client = chromadb.PersistentClient(path="./chroma_db")
     collection = client.get_collection(name="products")
@@ -84,34 +124,44 @@ def vector_search(query: str, top_k: int = 7, filters: dict = None) -> list:
     results = collection.query(
         query_embeddings=[query_embedding],
         n_results=top_k,
-        where=filters,
-        include=["metadatas", "documents"]  # Include documents for context
+        where=filters or {},
+        include=["metadatas", "documents"]
     )
     logger.debug(f"Vector search result: {results}")
+
+    # Fallback to filter-less search if no results
+    if not results["metadatas"] or not results["metadatas"][0]:
+        logger.info("No results with filters, retrying without filters")
+        results = collection.query(
+            query_embeddings=[query_embedding],
+            n_results=top_k,
+            where=filters or {},
+            include=["metadatas", "documents"]
+        )
+        logger.debug(f"Filter-less search result: {results}")
+
     return [
         {
             "metadata": metadata,
             "document": document
         }
         for metadata, document in zip(results["metadatas"][0], results["documents"][0])
-    ]
+    ] if results["metadatas"] and results["metadatas"][0] else []
+
 
 # Tool for the agent
 tools = [
     Tool(
         name="vector_search",
         func=vector_search,
-        description="Search for products matching the user's query."
-    )
+        description="Search for products matching the query with optional filters for category, price, or available_variants (e.g., {'category': 'dress', 'price': {'$lte': 100}, 'color': 'red'})."    )
 ]
 
 # Initialize the agent
-prompt = hub.pull("hwchase17/react-chat")
-# prompt.messages[0] = SystemMessage(content=system_prompt_text)
-# Create a new PromptTemplate with your system prompt
+# Initialize the agent
 system_prompt = PromptTemplate(
-    input_variables=prompt.input_variables,
-    template=system_prompt_text + "\n\n" + prompt.template
+    input_variables=["input", "chat_history", "agent_scratchpad"],  # Include agent_scratchpad
+    template=system_prompt_text  # Load prompt.txt with escaped curly braces
 )
 
 agent = create_react_agent(
@@ -131,7 +181,22 @@ agent_executor = AgentExecutor(
 def is_session_expired(last_active: datetime) -> bool:
     return datetime.utcnow() - last_active > SESSION_TIMEOUT
 
-def extract_products_from_ai_response(ai_content: str) -> list:
+
+df = pd.read_csv("products.csv")
+
+def clean_ai_text(ai_content: str) -> str:
+    return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
+
+
+def extract_products(text: str, df: pd.DataFrame, threshold: int = 80) -> list:
+    product_list = df["Product Name"].tolist()
+    matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
+    filtered = [match for match, score, _ in matches if score >= threshold]
+    matched_rows = df[df["Product Name"].isin(filtered)][["Product Name", "Category", "Price", "Available Variants"]].to_dict(orient="records")
+    logger.info(f"Fuzzy matched products: {matched_rows}")
+    return matched_rows
+
+def extract_products_from_ai_response(ai_content: str, df: pd.DataFrame) -> list:
     match = re.search(r'products:\s*(\[[^\]]*\])', ai_content, re.IGNORECASE)
     if match:
         try:
@@ -140,22 +205,18 @@ def extract_products_from_ai_response(ai_content: str) -> list:
             return products
         except Exception as e:
             logger.warning(f"Failed to parse product list from AI response: {e}")
+    if any(keyword in ai_content.lower() for keyword in ["dress", "skirt", "top", "pants", "outfit"]):
+        return extract_products(ai_content, df)
     return []
-
-def clean_ai_text(ai_content: str) -> str:
-    return re.sub(r'products:\s*\[.*?\]', '', ai_content, flags=re.IGNORECASE | re.DOTALL).strip()
-
-def extract_products(text: str, product_list, threshold: int = 80):
-    matches = process.extract(text, product_list, scorer=fuzz.partial_ratio)
-    filtered = [match for match, score, _ in matches if score >= threshold]
-    logger.info(f"Fuzzy matched products: {filtered}")
-    return filtered
 
 def get_chat_history(session_messages):
     return [msg.content for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
 
-def get_agent_chat_history(session_messages):
-    return [msg for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
+# def get_agent_chat_history(session_messages):
+#     return [msg for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
+def get_agent_chat_history(session_messages, max_messages=8):
+    relevant_messages = [msg for msg in session_messages if isinstance(msg, (HumanMessage, AIMessage))]
+    return relevant_messages[-max_messages:]  # Keep only the last 5 messages
 
 def generate_title_with_llm(user_input: str, matched_products: list) -> str:
     prompt_messages = [
@@ -172,6 +233,7 @@ def generate_title_with_llm(user_input: str, matched_products: list) -> str:
     return response.content.strip().strip('"')
 
 # --- Routes ---
+
 
 @app.post("/chat/{session_id}")
 async def chat(session_id: str, request: Request):
@@ -196,9 +258,10 @@ async def chat(session_id: str, request: Request):
             sessions[session_id]["last_active"] = now
 
         chat_history = get_agent_chat_history(sessions[session_id]["messages"])
+        logger.debug(f"Chat history: {[msg.content for msg in chat_history]}")
         sessions[session_id]["messages"].append(HumanMessage(content=user_input))
 
-        logger.debug("Calling agent with user input...")
+        logger.debug(f"Agent inputs: input={user_input}, chat_history={[msg.content for msg in chat_history]}")
         response_payload = agent_executor.invoke({
             "input": user_input,
             "chat_history": chat_history
@@ -206,15 +269,16 @@ async def chat(session_id: str, request: Request):
         response = response_payload['output']
         logger.info(f"Agent response: {response}")
 
-        matched_products = extract_products_from_ai_response(response)
-        if not matched_products:
-            matched_products = extract_products(response, product_list)
+        matched_products = extract_products_from_ai_response(response, df)
+        logger.debug(f"Matched products: {matched_products}")
 
         cleaned_text = clean_ai_text(response)
         sessions[session_id]["messages"].append(AIMessage(content=response))
 
         if matched_products:
-            title = generate_title_with_llm(user_input, matched_products)
+            # Handle case where matched_products is a list of strings or list of dicts
+            product_names = [p["Product Name"] if isinstance(p, dict) else p for p in matched_products]
+            title = generate_title_with_llm(user_input, product_names)
             return {
                 "response": {
                     "text": cleaned_text,
@@ -233,61 +297,6 @@ async def chat(session_id: str, request: Request):
 
     except Exception as e:
         logger.exception("Chat endpoint failed")
-        raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
-
-@app.post("/nudge/{session_id}")
-async def generate_nudge(session_id: str, request: Request):
-    try:
-        body = await request.json()
-        product_name = body.get("product_name")
-        logger.info(f"Received nudge request for product: {product_name}, session: {session_id}")
-
-        if not product_name:
-            raise HTTPException(status_code=400, detail="No product name provided")
-
-        now = datetime.utcnow()
-        if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
-            logger.info(f"Creating new session for nudge: {session_id}")
-            sessions[session_id] = {
-                "messages": [SystemMessage(content=system_prompt_text)],
-                "last_active": now
-            }
-        else:
-            logger.info(f"Updating session activity for nudge: {session_id}")
-            sessions[session_id]["last_active"] = now
-
-        history = [msg.content for msg in sessions[session_id]["messages"] if isinstance(msg, (HumanMessage, AIMessage))]
-
-        prompt_messages = [
-            SystemMessage(
-                content="You are a persuasive, friendly fashion assistant. Based on the conversation, write a short, encouraging nudge for why this product would be a great choice for the user, incorporating styling tips and making the user feel stylish and confident."
-            ),
-            HumanMessage(
-                content=f"Conversation:\n{chr(10).join(history)}\n\nProduct: {product_name}\n\nProvide a brief, upbeat nudge that includes 1 fun styling tip (with emojis). Ensure that the styling tip has a punchy, engaging vibe, and the nudge should inspire confidence and excitement about the choice. Do not add any fluff words / non-meaningful words. It should be maximum 1 sentence. For the Product - Ambition\u202fCrepe\u202f&\u202fSatin\u202fPencil\u202fSkirt, Here is an example nudge for evening look - Pair with a silk blouse & pointed pumps \ud83d\udc60, Here is an example nudge for casual look - Team with a sequin cami & strappy heels, Here is an example nudge for Professional look - Style under a chunky knit & ankle boots \u2615. Format: Do not repeat the product name. Correct: Slip into this dress and pair with bold red heels and a metallic clutch for a look that's both daring and sophisticated! \ud83d\udc83\u2728"
-            )
-        ]
-        logger.debug(f"Sending nudge prompt to LLM: {prompt_messages}")
-        nudge_response = llm.invoke(prompt_messages)
-        logger.info(f"Nudge generated: {nudge_response.content.strip()}")
-
-        sessions[session_id]["messages"].append(AIMessage(content=nudge_response.content.strip()))
-
-        return {"nudge": nudge_response.content.strip()}
-
-    except Exception as e:
-        logger.exception("Nudge endpoint failed")
-        raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
-
-@app.delete("/session/{session_id}")
-async def delete_session(session_id: str):
-    try:
-        if session_id in sessions:
-            del sessions[session_id]
-            logger.info(f"Session {session_id} deleted.")
-            return {"message": f"Session {session_id} deleted."}
-        raise HTTPException(status_code=404, detail="Session not found")
-    except Exception as e:
-        logger.exception("Session deletion failed")
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
 @app.get("/healthcheck")

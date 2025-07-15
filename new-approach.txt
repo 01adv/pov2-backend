@@ -1,0 +1,13 @@
+User Query
+   ↓
+LLM → semantic query + filters
+   ↓
+OpenAI Embedding → vector
+   ↓
+Pinecone search (embedding + metadata filter)
+   ↓
+Products
+   ↓
+LLM can rerank / explain / recommend
+   ↓
+UI Display

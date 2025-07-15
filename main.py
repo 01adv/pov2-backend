@@ -256,7 +256,7 @@ async def generate_nudge(session_id: str, request: Request):
     # MODIFIED
     if session_id not in sessions or is_session_expired(sessions[session_id]["last_active"]):
         sessions[session_id] = {
-            "messages": [SystemMessage(content=system_prompt)],
+            "messages": [SystemMessage(content=system_prompt_text)],
             "last_active": now
         }
     else:

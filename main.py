@@ -29,7 +29,7 @@ load_dotenv()
 app = FastAPI()
 
 # Load system prompt
-with open('prompt.txt', 'r', encoding='utf-8') as file:
+with open('prompt.md', 'r', encoding='utf-8') as file:
     system_prompt_text = file.read()
 
 # Load products (for fallback fuzzy matching)

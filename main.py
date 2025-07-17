@@ -52,10 +52,10 @@ llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 SESSION_TIMEOUT = timedelta(minutes=30)
 sessions = {}  # session_id: {"messages": [...], "last_active": datetime}
 
-# @app.on_event("startup")
-# async def startup_event():
-#     logger.info("Server starting... Running embedder to generate product embeddings.")
-#     embed_products()
+@app.on_event("startup")
+async def startup_event():
+    logger.info("Server starting... Running embedder to generate product embeddings.")
+    embed_products()
 
 
 # Tool for the agent

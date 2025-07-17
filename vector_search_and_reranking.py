@@ -23,7 +23,7 @@ app = FastAPI()
 
 # module‑level singletons
 client = chromadb.PersistentClient(path="./chroma_db")
-collection = client.get_collection(name="products")
+# collection = client.get_collection(name="products")
 embedder = OpenAIEmbeddings(
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     model="text-embedding-3-small"
@@ -92,6 +92,9 @@ def normalize(vec):
     return vec / np.linalg.norm(vec)
 
 def vector_search(query: str, top_k: int = 5, filters: dict | None = None) -> list:
+    # Initialize collection inside the function to avoid import-time errors
+    collection = client.get_or_create_collection(name="products")
+    logger.info("Collection 'products' initialized in vector_search")
 
     if isinstance(query, str) and query.lstrip().startswith("{"):
         data = json.loads(query)

@@ -30,6 +30,63 @@ embedder = OpenAIEmbeddings(
 )
 
 
+def preprocess_filters(filters: dict) -> dict:
+    if not filters:
+        return {}
+
+    categories = []
+    price_values = []
+    other_filters = {}
+
+    for key, value in filters.items():
+        if key == "category" and isinstance(value, str):
+            categories = [c.strip() for c in value.split(",")]
+        elif key == "price":
+            if isinstance(value, dict):
+                price_val = value.get("$lte")
+                if isinstance(price_val, str) and "," in price_val:
+                    price_values = [int(x.strip()) for x in price_val.split(",")]
+                elif isinstance(price_val, (int, float)):
+                    price_values = [price_val]
+            elif isinstance(value, (int, float)):
+                price_values = [value]
+        else:
+            other_filters[key] = value
+
+    # Build OR filter blocks
+    or_block = []
+    if categories:
+        for cat in categories:
+            if price_values:
+                for price in price_values:
+                    clause = {"category": cat, "price": {"$lte": price}}
+                    clause.update(other_filters)
+                    or_block.append(clause)
+            else:
+                clause = {"category": cat}
+                clause.update(other_filters)
+                or_block.append(clause)
+    elif price_values:
+        for price in price_values:
+            clause = {"price": {"$lte": price}}
+            clause.update(other_filters)
+            or_block.append(clause)
+
+    # Simplify return if only one clause
+    if len(or_block) == 1:
+        return or_block[0]
+    elif or_block:
+        return {"$or": or_block}
+
+    # Fallback: $and logic for other filters
+    if len(filters) > 1:
+        return {"$and": [{k: v} for k, v in filters.items()]}
+
+    return filters
+
+
+
+
 def normalize(vec):
     vec = np.array(vec)
     return vec / np.linalg.norm(vec)
@@ -42,8 +99,9 @@ def vector_search(query: str, top_k: int = 5, filters: dict | None = None) -> li
         top_k   = data.get("top_k", top_k)
         filters = data.get("filters", filters)
 
-    if filters and len(filters) > 1 and "$and" not in filters:
-        filters = {"$and": [{k: v} for k, v in filters.items()]}
+    if filters:
+        filters = preprocess_filters(filters)
+
 
     # Normalize query embedding
     query_vec = normalize(embedder.embed_query(query))

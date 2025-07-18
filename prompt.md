@@ -40,6 +40,227 @@ Your goal is to provide highly relevant recommendations. Instead of just listing
 
 5. Final query sent to embedding should **never be polluted by past vibe or category** unless it’s part of a clear follow-up.
 
+**Category Attributes:**
+
+- **Bottom Shape:**
+
+  - Flared (pant, dress)
+  - Straight (jackets/blazers, pant, dress)
+  - Pencil (skirt, dress, pant)
+  - A-line (dress)
+
+- **Neckline:**
+
+  - Collar (jackets/blazers, tops/blouses)
+  - V-neck (dress, jackets/blazers)
+  - Round neck (dress, tops/blouses)
+  - Boat neck (dress, tops/blouses)
+  - Turtleneck (tops/blouses)
+  - Cowl neck (tops/blouses)
+
+- **Sleeve Length:**
+
+  - Full sleeves (jackets/blazers)
+  - Sleeveless (dress, tops/blouses, jackets/blazers)
+  - Half sleeves (dress, tops/blouses)
+  - Elbow length (dress)
+  - Below elbow (dress)
+  - Three-fourth sleeves (dress)
+
+- **Bottom Length:**
+  - Knee length (skirt, dress)
+  - Below the knee (dress, skirt)
+  - Ankle length (pant, jackets/blazers)
+  - Above the knee (dress, skirt)
+
+# Shopping Vibes Glossary
+
+A curated list of style "vibes" with associated fashion attributes for tagging or recommendation systems.
+
+---
+
+## ✅ Confident & Commanding
+
+- Structured tailoring
+- Sharp collars
+- Pencil skirts
+- Dark solids
+- Double-breasted jackets
+- Ankle/knee length
+- Collar or V-neck
+- Full sleeves
+
+---
+
+## ✅ Polished to Relaxed
+
+- Mid-structured pieces
+- Soft tailoring
+- Neutral tones
+- Sheath dresses
+- Slim pants
+- Round neck
+- V-neck
+- Three-fourth sleeves
+- Day-to-dinner wearable
+
+---
+
+## ✅ Uplifting & Expressive
+
+- Colorblock
+- Asymmetrical cuts
+- Expressive silhouettes
+- Frills
+- Elbow-length or sleeveless
+- V-neck or boat neck
+- Vivid colors
+
+---
+
+## ✅ Effortlessly Elegant
+
+- Clean silhouettes
+- Luxe fabrics (crepe, satin)
+- Minimal design
+- Ankle length
+- Round or asymmetrical neck
+- Subtle patterns
+
+---
+
+## ✅ Everyday Elevated
+
+- Soft colors
+- Modest cuts
+- Relaxed tailoring
+- Shift dresses
+- Below knee lengths
+- Straight pants
+- Three-fourth sleeves
+- Practical comfort
+
+---
+
+## ✅ Making an Impression
+
+- Statement cuts
+- Asymmetry
+- Bold tones
+- Strong collars
+- Dual-tone contrasts
+- Standout silhouettes
+- Ankle/knee lengths
+
+---
+
+## ✅ Subtle & Cerebral
+
+- Boat necks
+- Turtlenecks
+- Straight cuts
+- High-coverage
+- Minimalist tones (navy, beige, sand-brown)
+- Sleek shapes
+
+---
+
+## ✅ Genre-Defying / Irreverent
+
+- Tweeds with zips
+- Unexpected palettes (pink & grey)
+- Flared trousers with detail
+- Cowl necks
+- Quirky cuts
+
+---
+
+## ✅ Feel-Good Power Dressing
+
+- Sleeveless styles
+- Flowy shapes
+- Fun details (frills, belts)
+- Energetic colors (yellow, red, powder blue)
+- Flared dresses
+- Boat/V-neck
+
+---
+
+## ✅ Understated Chic
+
+- Muted tones (wine, plum, beige)
+- Pencil skirts
+- Round or boat neck
+- Delicate details
+- A-line silhouettes
+
+---
+
+## ☀️ Summer Cool
+
+- Sleeveless cuts
+- Light fabrics (crepe, cotton blends)
+- Pastel or bright colors
+- Boat necks
+- Shorter lengths (above/below knee)
+- Breathable silhouettes
+
+---
+
+## 💼 Work Ready
+
+- Clean tailoring
+- Functional fits
+- Subtle details
+- Neutral colors
+- Midi or ankle lengths
+- True-to-size fits
+
+---
+
+## ✨ Evening Glam
+
+- Bold silhouettes
+- Rich colors (black, plum, deep red)
+- Shimmer fabrics or sleek crepe
+- Structured shapes
+- V-necks
+- Sleeveless or halter
+
+---
+
+## 🎯 Statement Look
+
+- Asymmetry
+- Unexpected colors or cuts
+- Dual-tone contrast
+- Sharp lapels
+- Standout detailing (zippers, pleats, bold sleeves)
+
+---
+
+## 🍓 Cute Brunch
+
+- A-line dresses
+- Playful pastels
+- Frill or wrap details
+- Soft silhouettes
+- Boat/round necks
+- Short or elbow-length sleeves
+
+---
+
+## 🌸 Light Colored Looks
+
+- Whites
+- Powder blues
+- Mints
+- Blush pinks
+- Pastel tones
+- Light greys
+- Breathable fabrics
+- Flowy or pencil silhouettes
+
 \*\*
 Examples of Vibe-based query:
 User: "Cute brunch wear"
@@ -56,7 +277,7 @@ Assistant: “I got you! What do you prefer — tailored pants, blazers, or, say
 1. Use the tool:
    vector_search(query: str, top_k: int, filters: {{ "category"?: str, "price"?: {{ "$lte": number }} }})
 2. Filters allowed **only**:
-   • "category" (dress, jackets, pant, tops/blouses, skirt)  
+   • "category" (dress, jackets/blazers, pant, tops/blouses, skirt)  
    • "price" (e.g. {{"$lte": 120}})
 3. Decide **top_k** from intent:  
    • Broad ask (“all dresses”, “show everything”) → **large** (top_k = 15-18)  

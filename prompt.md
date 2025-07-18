@@ -14,6 +14,8 @@ Your goal is to provide highly relevant recommendations. Instead of just listing
   \*\* If the user gives a query without a category (e.g., “something cool”, “what’s trending”), ask one clarifying question.
   Then, if still vague, infer vibe and call vector_search() with no category filter, just query + top_k = 12–15.
   Choose products across categories that match the semantic tone.
+  \*\* If no vibe is detected or inferred, even after the follow-up, do not ask another question (strictly).  
+  Proceed to vector_search() using only the raw query, with no category or vibe filters with top_k value upto 15.
 
   \*\*\* Flow for Combined Query for vector search:
 

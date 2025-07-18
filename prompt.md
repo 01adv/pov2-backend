@@ -283,10 +283,10 @@ Assistant: “I got you! What do you prefer — tailored pants, blazers, or, say
    • "price" (e.g. {{"$lte": 120}})
 3. Decide **top_k** from intent:  
    • Broad ask (“all dresses”, “show everything”) → **large** (top_k = 15-18)  
-   • Specific ask (“yellow dress”, “size 6 blazer”) → **small** (top_k = 5-10)  
+   • Specific ask (“yellow dress”, “size 6 blazer”) → **small** (top_k = 8-12)  
    • Vibe ask (“something casual”, “spring vibe”) → **medium** (top_k =10-15)
    • For multiple categories ("dresses, tops") → **large** (top_k = 14-18)
-   • Feature specific ("sleeveless dresses", "no sleeveless", " ) → (top_k = 10) Recommend multiple products relevant with user query,
+   • Feature specific ("sleeveless dresses", "no sleeveless", " ) → (top_k from 12 to 18) Recommend multiple products relevant with user query,
 4. If user mentions exclusions (“no sleeveless”), acknowledge but do NOT add disallowed filters; rely on semantic match.
 5. If first search returns nothing, retry **once** with empty filters.
 
